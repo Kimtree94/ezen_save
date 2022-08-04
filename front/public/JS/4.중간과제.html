@@ -17,19 +17,38 @@
 	console.log("십만원 : " + parseInt( 금액/100000 ) + "장") 
 		금액 = 금액 - ( parseInt( 금액/100000 ) *100000 )
 		
-	console.log("만원 : " + parseInt( 금액/10000 ) + "장") 
+		console.log("만원 : " + parseInt( 금액/10000 ) + "장") 
+		금액 = 금액 - (parseInt( 금액/10000 ) *10000)
+    console.log("천원 : " + parseInt( 금액/1000) + "장")
+        금액 = 금액 -(parseInt( 금액/1000) *1000)
+	 	console.log("백원 : " + parseInt (금액/100) + "개")
+	//결과출력[console.log]  십만 3 만원 5 천원 6 백원 7
+
 	
-	
-	
-//결과출력[console.log]  십만 3 만원 5 천원 6 백원 7
 // 문제2 :  prompt 함수 로 반지름 입력받아 원 넓이 출력 
 // 원 넓이 공식 : 반지름*반지름*원주율(3.14)
+
+ function circleWith(radius) {
+  return radius * radius * 3.14;
+}
+
+const r = prompt("반지름을 입력하세요!");
+console.log(circleWith(r));
+
 //문제 3 : prompt 함수 로 숫자를 입력받아 입력받은 값이 3의 배수인지 체크 
 // 결과 예상 출력 
-  // 3의 배수이면 트루로 출력 아니면 풜스로 출력 
+  // 3의 배수이면 트루로 출력 아니면 풜스로 출력  구글링
+ let n = prompt("숫자를 입력하세요");
+ if (n%3 == 0){
+	 console.log("True");
+ } else {
+	 console.log("false");
+ }
 //문제 4: prompt 함수 로 숫자를 입력받아 입력받은 값이 홀수인지 체크
 //결과  예상 출력 
 	// 홀수이면 트루 출 짝수이면 풜스 출 
+	
+
 //문제 5: 두 실수를 입력받아 앞실수의 값이 뒤 실수의 값의 몇% 인지 출력하기 
 //예)54.5    84.3 이면    결과 64.~~~%
 
