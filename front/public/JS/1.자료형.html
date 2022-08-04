@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--  JS 작성 구역 -->
+	<script type="text/javascript">
+	/*
+		  자료형 : 자료형태에 따라 나눠 놓은 것 
+		 1. 숫자[number] , 2. 문자열[string] , 3.불[boolean]
+		1. 문자열 :""혹은''안에 들어있는 데이터
+		   2. +: 문자열 연결 연산자 
+		 3. 문자열내 특정문자 선택[0~]
+		    안  녕  하  세  요  0  1  2  3  4 
+		    인덱스 : 문자가 저장된 순서번호[0번시작]
+		   4.length:문자열의 길이
+		2. 숫자 자료형 
+	1. 정수 혹은 실수를 같은 자료형으로 인식[273 , 52.273 ]
+		 연산자
+		    산술연산자 : +더하기 -뺴기 *곱하기 /나누기 % 나누기    
+            비교연산자 : ==같다. !=같지않다 > 초과 <미만 >= 이상 <= 이하
+         비교연산자의 결과는 참[true]거짓[false]
+        관계연산자
+        
+ 1. && = and이면서 면서 이고 모두 그리고  모두 참이면 참 
+2. || = or이거나 거나 또는 하나라도   하나라도 참이면 참 
+3. ! = 부정[true->false/false->true]
+3. 불 자료형[Boolean]
+      1. true 혹은 fales 만 저장하는 자료형
+*typeof(데이터) : 해당 데이터의 자료형 
+     */
+       
+        
+		//1. 문자열
+		console.log('안녕히세여')
+		//2. 문자열 연결 
+		console.log('안녕하세요' + '반갑습니다')
+		//3. 문자열내 문자선택
+		console.log('안녕하세요'[0])
+		console.log('안녕하세요'[1])
+		console.log('안녕하세요'[2])
+		//4.문자열 길이 
+		console.log('안녕하세요'.length) //인덱스:0~4 길이:5
+
+		// 예제문제1: 토끼 모양 출력
+		// 이케이프문자[제어문자] : 1. \n  2.\\ 3.\t
+		// | : 엔터위에 shift=\
+
+		console.log('\\   /\\ \n )  (\') \n( /  )\n \\(__)| ')
+		//예제문제 2 : 강아지 모양 출력
+		console.log('| \\_/ | \n|q   p|      /}\n(  0  )""""\\  \n|"^"`      \n| |_/=\\\\_ _| ')
+
+		//숫자형
+		console.log(273)
+		console.log(52.273)
+		// 1. 산술연산자 
+		console.log(5 + 3)//8
+		console.log(5 - 3)//2
+		console.log(5 * 3)//15
+		console.log(5 / 3)//1.66~~
+		console.log(5 % 3)//2
+		//2 .비교연산자
+		console.log(5==3)//결과=false
+		 console.log(5!=3)//결과=true 
+		 console.log(5>3)//결과=true
+		 console.log(5<3)//결과=false
+		 console.log(5>=3)//결과=true
+		 console.log(5<=3)//결과=false
+	</script>
+
+</body>
+</html>
