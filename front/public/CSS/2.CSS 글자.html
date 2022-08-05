@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* CSS 주석 */
+/*선택자{ 속성 : 값:} */
+
+/* 웹폰트 */
+@font-face {
+	font-family: 'MYYeongnamnu';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/MYYeongnamnu.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/MYYeongnamnu.woff2')
+		format('woff2');
+}
+
+/* 선택자 {속성 : 값; } */
+/*옆 모양을 지켜*/
+* {
+	font-family: "궁서";
+	color: blue;
+}
+
+h3 {
+	font-family: 'MYYeongnamnu'; /* 웹폰트 적용*/
+	text-decoration: overline line-through underline;
+	                   /*윗줄     취소선       밑줄 */
+	text-align: center; /*폰트 정렬 = left center right*/
+	text-shadow: 1px 1px 2px red; /*그림자*/
+	/*    x축  y축  깊이 색상 */
+}
+
+p {
+	font-family: "궁서"; /**/
+	background-color: yellow; /*배경색*/
+	line-height: 150%; /*줄간격[ 기본값 :100%]*/
+	font-size: 30px; /*폰트 크기*/
+	font-style: italic; /*폰트 기울기*/
+	font-weight: bold; /*폰트 굵게*/
+	letter-spacing: 2px; /*글자 간격[자건]*/
+	word-spacing: 5px; /*단어 간격[어간]*/
+}
+/*특정 태그에 기본값css적용*/
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover { /*마우스를 올렸을때 이벤트*/
+	color: orange;
+}
+
+a:visited { /* 1번 이상 a태그를 클릭했을때*/
+	color: blue;
+}
+
+a:active { /*a태그에 마우스를 클릭했을때 이벤트*/
+	color: green;
+}
+</style>
+</head>
+<body>
+
+	<!-- 
+글자/폰트 관련 속성 
+ 	1. font-family : 폰트명 
+ 	2. color : 글꼴 색
+ 	3. background-color : 배경색
+ 	4. font -size : 폰트크기
+ 	5. font- style : italic [ 폰트 기울기]
+ 	6. font- weight : bold [ 폰트 굵게]
+ 	7. text-decoration :
+ 	 	    overline   :윗줄
+ 	 	    underline  :밑줄
+ 	 	    line-throuhg:취소선
+ 	8.text-align :
+ 	   	   center:가운데 정렬
+ 	   	   left  :왼쪽 정렬
+ 	   	   right: 오른쪽 정렬
+ 	9.text-shadow : x축 y출 흐림도 색상 
+ 	10.line-height : 줄간격[%]
+ 	11.letter-spacing : 자간 
+ 	12.word-spacing : 어간 
+ -->
+	<h3>고양이</h3>
+	<p>
+		고양이는 식육목 고양이과에 속하는 포유류이다. 들고양이는 약 10만 년에서 7만년 전부터 존재했다.<br> 길들여진
+		고양이의 기원은 약 1만년 전 중동 지역에서 스스로<br> 숲속을 나와 사람들이 모여사는 마을에 정착하여 길들여진
+		아프리카들고양이로 추측된다
+	</p>
+	<a href="https://www.naver.com/"> 네이버 </a>
+	<!--네이버[웹서버]에게 html 주세요~  -->
+	<!--  http : 하이퍼 텍스트 전송 프로토콜 [html 전송 방식] 
+           //프로토콜[규약]
+           // 경기도 안산시 구 동 같이 주소같은 약속 
+      도메인( DNS )
+      http://ip주소/port  -> 이것을 문자로 바꿔줌 -> http://www...같이
+           -->
+	<!-- *{font-family:"궁서";/*폰트*/
+color: blue;      /*폰트색상*/}
+/* 특정태그에 적용*/ -->
+</body>
+</html>

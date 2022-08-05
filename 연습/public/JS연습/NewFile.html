@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+console.log("\        /\' \n )   ( `) \n  (  /  )  \n   \(__)|")
+console.log('\\   /\\ \n )  (\') \n( /  )\n \\(__)| ')
+//문 1
+let 금액 = prompt('금액 입력 : ') //1. 금액 입력 -> 메모리(변수와상수) 저장
+//1. 금액 변수를 선언과 동시에 입력받은 값을 변수에 저장 한다 
+console.log('안내)입력받은 금액 : ' + 금액 + "원")
+//2. 변수를 호출해서 콘솔에 출력한다
+console.log('십만원 : ' + parseInt(( 금액/100000)) + '장')
+//3. 금액에서 십만원 나누기 [ 소수점 발생 -> 소수점 버리기 = parseInt(데이터) ]
+//console.log('십만원: ' + 금액[0] + '장')
+//console.log('만원: ' + 금액[0] + '장')
+//console.log('천원: ' + 금액[0] + '장')
+//4.금액에서 십만원 차감후에 만원권  체크
+//금액 = 금액 - 값 vs 금액 -= 값
+금액-=parseInt(금액/100000)*100000
+console.log('만원 : ' + parseInt((금액/10000))+ '장')
+금액-=parseInt(금액/10000)*10000
+console.log( '천원 : ' + parseInt((금액/1000))+장)
+ //문 2
+  let 반지름 = prompt('반지름 입력 :')
+ console.log ('원넓이 : ' + (반지름*반지름*3.14))
+ // 문 3 배수찾기  중요
+  //배수찾기 공식 : 값 % 수 == 0 [ 나머지가 0이면 값은 그 수의 배수] 
+  let 정수1 = prompt('정수1 입력 :')
+  console.log('3배수 체크 :' + (정수1 % 3 == 0)
+  //문제 4 홀짝 찾기 중요
+   // 홀짝 찾기 공식 : 어떤 값에 %<나누기> 2 == 1 [나머지가 1이면 값은 홀수 / 나머지가 0 이면 짝수]
+ let 정수2 = prompt('정수2 입력 :')
+ console.log('홀수체크' :+((정수2 % 2 == 1))
+ //문제 5
+ let 실수1 = prompt(' 실수 1 입력 :')
+ let 실수2 = prompt(' 실수 2 입력 :' )
+ console.log ('실수2의 실수1 백분율 : ' +(실수1/실수2)*100 + % )
+</script>
+
+
+</body>
+
+
+
+</html>
