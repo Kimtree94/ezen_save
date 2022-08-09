@@ -3,56 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-div {
-	margin-left: 100px;
-	margin-right: 100px;
-	padding-left: 80px;
-	padding-right: 80px;
-}
 
-h3 {
-	border-bottom: dotted #c0c0c0;
-	text-align: center;
-}
+<!--  cs 파일 불러오기 -->
 
-.c2 {
-	text-align: left;
-}
 
-.c3 {
-	text-align: center;
-}
-.s1{
-	text-align: right;
-}
-</style>
+<link href="9.중간과제3.css" rel="stylesheet">
+
 </head>
 <body>
-	<div>
-		<h3>회원 가입 폼</h3>
-		<span class="c2">아이디</span> <input type="text">
-		<br> <span class="c2"> 비밀번호  <input
-				type="text">
-		</span>
-		</span ><br> <biv class="c2"> 비밀번호 확인</biv>   <span class="c3">  <input type="password"></span>
-		</span><br> 이름  <input type="text"> 
-		</span><br> 이메일 <input type="text">@ <select>직접입력
-				<option>직접입력</option>
-				<option>1</option>
-				<option>2</option>
-		</select><br>
-		</span> <span class="c2"> 이메일 수신<input type="radio" name="message">비수신 <input
-			type="radio" name="message">수신
-		</span> <br> <span class="c2">가입경로 <input type="checkbox" name="iteml">친구추천
-			<input type="checkbox" name="iteml">인터넷검색 <input
-			type="checkbox" name="item">기타
-		</span><br>
-	</div>
-	<div>
-		<span class="c2">인사말<textarea rows="5" cols="40"></textarea></span>
-	</div>
-     <span class="s1"><input type="submit"  value="저장하기"></span>
-     <span class="s1"><input type="submit" value="취소하기"></span>
+
+	<h3>회원 가입 폼</h3>
+	<form>
+		<ul class="singupbox">
+			<li> <!-- 리스트 항목= 행 -->
+				<ul class="cols">
+					<li class="col1">아이디</li><!--  리스트 항목 =열 -->
+					<li class="col2"><input type="text"></li>
+				</ul>
+			</li>
+			<li>
+				<ul class="cols">
+					<li class="col1">비밀번호</li>
+					<li class="col2"><input type="password"></li>
+				</ul>
+			</li>
+			<li>
+				<ul class="cols">
+					<li class="col1">비밀번호 확인</li>
+					<li class="col2"><input type="password"></li>
+				</ul>
+			</li>
+			<li>
+				<ul class="cols">
+					<li class="col1">이름</li>
+					<li class="col2"><input type="text"></li>
+				</ul>
+			</li>
+			<li>
+				<ul class="cols">
+					<li class="col1">이메일</li>
+					<li class="col2"><input type="text"> <select>
+							<option>직접입렵</option>
+							<option>naver.com</option>
+							<option>nate.com</option>
+					</select></li>
+				</ul>
+			</li>
+			<l
+
+				<ul class="cols">
+					<li class="col1">이메일수신</li>
+					<li ><input type="radio" name="messge"> 비수신 <input
+						type="radio" name="messge"> 수신</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="cols">
+					<li class="col1">가입경로</li>
+					<li ><input type="checkbox" name="signup"> 친구추천 <input
+						type="checkbox" name="signup"> 인터넷검색 <input
+						type="checkbox" name="signup" checked="checked"> 기타</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="cols">
+					<li class="col1 hello">인사말</li>
+					<li class="col2"><textarea rows="10" cols="40"></textarea></li>
+				</ul>
+			</li>
+		</ul>
+		<div class="buttonbox">
+			<input type="submit" value="저장하기"> <input type="reset"
+				value="취소하기">
+		</div>
+
+
+
+	</form>
+
+
 </body>
 </html>

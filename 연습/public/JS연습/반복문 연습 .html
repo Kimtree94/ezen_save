@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//예1
+for(let i=0 ; i<=10 ; i++){
+	console.log(i)
+}
+//예2
+let sum = 0 //누적합계 저장할 변수 
+for(let i=1 ; i<=10 ; i++){
+	sum+=i
+}
+console.log('1부터 10까지 누적합계 : ' + sum)
+//예3
+let sum2=0
+for(let i = 7 ; i<=100 ; i+=7){
+	sum2+=i
+}
+console.log('합은'+ sum2)
+//예4
+let sum3=0
+for(let i = 1 ; i<=100 ; i++){
+	if(i%7==0){sum3+=i}
+}
+console.log('합은2 :' + sum3)
+//예5
+for(let 단 =1; 단<=9 ; 단++){
+	for(let 곱 = 1 ; 곱<= 9 ; 곱 ++){
+		console.log(단+'X'+곱+'='+(단*곱))
+	}
+}
+
+</script>
+</body>
+</html>
