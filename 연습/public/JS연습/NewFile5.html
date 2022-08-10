@@ -5,47 +5,85 @@
 <title>Insert title here</title>
 </head>
 <body>
-<script type="text/javascript">
-/* 
-let 문제7 = prompt('7.줄수: ')
- 	output += ''
- 	for( let i = 1 ; i<=문제7 ; i++ ){
- 		// 1. 공백
- 		for( let b = 1 ; b<=문제7-i ; b++ ){
- 			output +=' '
- 		}  // for2 end 
- 		// 2. 별
- 		for( let s = 1 ; s<=i*2-1 ; s++ ){
- 			output +='*'
- 		}  // for3 end 
- 		// 3. 줄바꿈
- 		output +='\n'
- 	} // for1 end 
- 	console.log( output ) 
- 	*/
+	<script type="text/javascript">
+		let output = ''
+		//문제6
+		/* 	let 정수1 = prompt('입력')
+			output=''
+			for (let i = 1; i <= 정수1; i++) {
+				for (let b = 1; b <= i-1; b++) {
+					output += ' '
+				}
+				for (let s = 1; s <= 정수1 - i + 1; s++) {
+					output += '*'
+				}
+				output += '\n'
+			}
+			console.log(output) */
+		//문제7		
+		/* let 정수1 = prompt('입력')
+		output += ''
+		for (let i = 1 ; i <=정수1; i++) {
+			for (let b = 1; b<= 정수1-i; b++) {
+				output += ' '
+			}
+			for (let s = 1 ; s<= i*2-1; s++) {
+				output +='*'
+			}
+			output += '\n'
+		}
+		console.log(output)
+ */
+//문8
+/* let 정수1=Number(prompt('입력'))
+output=''
+for(let i=1 ;i<=정수1 ; i++){
+	for(let j = 1 ; j<=정수1;j++){
+		
+	if(i==j){output+='*'}
+	else if ((i+j)==(정수1+1)) {output+='*'
+		
+	}else {output+=' '}
+	}
+	output += '\n'
+}
+		console.log(output)
+ 
+  */
+  let 문제8 = prompt('8.줄수(홀수) : ')
+	output = ''
+	for( let i = 1 ; i<=문제8 ; i++ ){
+		for( let j = 1 ; j<=문제8; j++ ){
+			output += '['+i+','+j+']'
+		}
+		output += '\n'
+	}
+	console.log( output ) 
+	
+ 
+ 
+ 
+ 
+ 
+ 
+	</script>
 
- let 정수1 = prompt('줄수 : ')
-  	output =''
-  	for(let i = 정수1 ; i<=1 ; i--){
-  		//1-공백
-  		for(let j = 정수1 ; i<=1 ; b--){
-  			output= ''
-  		}
-  		//2-별
-  		for (let s= 정수1 ; s<=i-2 ; s--) {
-  			output+= '*'
-  		}
-  		//3-줄바꿈
-  		output+='\n'
-  	}
-console.log(output)
-
-
-
-
-
-
-
-</script>
+	<!-- 
+		let 문제7 = prompt('7.줄수: ')
+	 	output += ''
+	 	for( let i = 1 ; i<=문제7 ; i++ ){
+	 			 for( let b = 1 ; b<=문제7-i ; b++ ){
+	 			output +=' '
+	 		}  
+	 		
+	 		for( let s = 1 ; s<=i*2-1 ; s++ ){
+	 			output +='*'
+	 		}  
+	 		
+	 		output +='\n'
+	 	}  
+	 	console.log( output ) 
+	 -->
 </body>
+
 </html>
