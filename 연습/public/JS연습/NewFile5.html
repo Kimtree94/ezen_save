@@ -6,83 +6,87 @@
 </head>
 <body>
 	<script type="text/javascript">
-		let output = ''
-		//문제6
-		/* 	let 정수1 = prompt('입력')
-			output=''
-			for (let i = 1; i <= 정수1; i++) {
-				for (let b = 1; b <= i-1; b++) {
-					output += ' '
-				}
-				for (let s = 1; s <= 정수1 - i + 1; s++) {
-					output += '*'
-				}
-				output += '\n'
-			}
-			console.log(output) */
-		//문제7		
-		/* let 정수1 = prompt('입력')
-		output += ''
-		for (let i = 1 ; i <=정수1; i++) {
-			for (let b = 1; b<= 정수1-i; b++) {
-				output += ' '
-			}
-			for (let s = 1 ; s<= i*2-1; s++) {
-				output +='*'
+	//4번  
+	output = ''
+		 /* let 정수1 = Number(prompt('입력'))
+		output=''
+		for (let i = 1; i <= 정수1; i++) {
+			for (let s = 1; s <= 정수1 - 1 + i; i++) {
+				output += '*'
 			}
 			output += '\n'
 		}
-		console.log(output)
- */
-//문8
-/* let 정수1=Number(prompt('입력'))
-output=''
-for(let i=1 ;i<=정수1 ; i++){
-	for(let j = 1 ; j<=정수1;j++){
-		
-	if(i==j){output+='*'}
-	else if ((i+j)==(정수1+1)) {output+='*'
-		
-	}else {output+=' '}
-	}
-	output += '\n'
-}
-		console.log(output)
- 
-  */
- /*  let 문제8 = prompt('8.줄수(홀수) : ')
-	output = ''
-	for( let i = 1 ; i<=문제8 ; i++ ){
-		for( let j = 1 ; j<=문제8; j++ ){
-			output += '['+i+','+j+']'
+		console.log(output) 
+   */
+  //5번
+ 	/* let 정수1=prompt('입력')
+	output=''
+	for(let i=1;i<=정수1;i++){
+		for(let b=1;b<=정수1-i;b++){
+			output+=' '
+		}for(let s=1;s<=i;s++){
+			output+='*'
 		}
-		output += '\n'
+		output+='\n'
+	}console.log(output) 
+		 */
+ //6번
+/* let 정수1=prompt('입력')
+output=''
+for(let i=1;i<=정수1;i++){
+	for(let b=1;b<=i-1;b++){
+		output+=' '
+	}for(let s=1;s<=정수1-i+1;s++){
+		output+='*'
 	}
-	console.log( output ) 
-	
- 
-  */
- // 1
- /* output = ''
- let 정수1=Number(prompt('입력'))
+	output+='\n'
+}console.log(output) */
+//7번
+let 정수1=prompt('입력')
+output=''
+for(let i=1;i<=정수1;i++){
+	for(let b=1; b<=정수1-i;b++){
+		output+=' '
+	}for(let s=1 ; s<=i*2-1;s++){
+		output+='*'
+	}
+	output+='\n'
+}console.log(output)
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		//다이아 예제 
 
- for(let i =1 ; i<=정수1 ; i++){
+		/* 		let output = ''
 
-		 output+=('*')
-	
- }console.log(output)
- 
-  */
-  //3
-  let 정수1=Number(prompt('입력 '))
-  output = ''
-  for(let i = 1 ; i <= 정수1 ;i++){
-	  for(let s=1 ; s<=i ; s++){
-		  output+=('*')
-	  }
-	  output+=('\n')
-  }console.log(output)
-  
+		 let 정수 = (prompt('입력'))
+		 for (let i = 1; i <= 정수; i++) {
+		 for (let b = 1; b <= 정수 - i; b++) {
+		 output += ' '
+		 }
+		 for (let s = 1; s < (2 * i - 1); s++) {
+		 output += '*'
+		 }
+		 output += '\n'
+		 }
+		 for (let j = 정수 - 1; j >= 1; j--) {
+		 for (let k = 1; k <= 정수 - j; k++) {
+		 output += ' '
+		 }
+		 for (let l= 1; l <= j * 2 - 1; l++) {
+		 output += '*'
+		 }
+		 output += '\n'
+		 }
+		 console.log(output)
+		 */
+		/*첫 for문 끝  */
 	</script>
 
 	<!-- 
@@ -101,7 +105,7 @@ for(let i=1 ;i<=정수1 ; i++){
 	 	}  
 	 	console.log( output ) 
 	 -->
-	 <h3></h3>
+	<h3></h3>
 </body>
 
 </html>
