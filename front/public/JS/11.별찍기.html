@@ -212,24 +212,27 @@
 	 	*/
 	 	// 예8
 	 	let 문제8 = Number( prompt('4.줄수 : ') ) 
-	 	output = ''	
-	 	for( let i = 1 ; i<=문제8 ; i++ ) { // i = 행 = 가로 
-			for( let j = 1 ; j<=문제8 ; j++ ) { // j = 열 = 세로 
-				if( i == j ) {output += '*'} // 행 = 열 동일한 경우 별찍기 
-				else if( (i+j) == (문제8+1) ) {output += '*'} // 행 과 열의 더한값이 최대줄수+1 과 동일한 경우 별찍기
-				else {output += ' '}
+	 
+			output = ''
+			for (let i = 1; i <= 문제8; i++) { // i = 행 = 가로 
+				for (let j = 1; j <= 문제8; j++) { // j = 열 = 세로 
+					if (i == j) {
+						output += '*'
+					} // 행 = 열 동일한 경우 별찍기 
+					else if ((i + j) == (문제8 + 1)) {
+						output += '*'
+					} // 행 과 열의 더한값이 최대줄수+1 과 동일한 경우 별찍기
+					else {
+						output += ' '
+					}
+				}
+				// 3. 줄바꿈
+				output += '\n' // 줄바꿈
 			}
-			// 3. 줄바꿈
-	 		output += '\n' // 줄바꿈
-		}
-	 	console.log( output )
-	 	
+			console.log(output)
+		</script>
+	 
 
-	 
-	 
-	 </script>
-	 
-	 
 	 
 </body>
 </html>
