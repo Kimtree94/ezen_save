@@ -1,0 +1,165 @@
+@charset "UTF-8";
+/* css 기본 설정 */
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "맑은 고딕";
+	
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	order: #eeeeee;
+}
+
+.box {
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+/* ------------------------ 헤더 ----------------------------*/
+#header {
+	height: 100px;
+}
+
+.logo {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+
+.logo_impact {
+	color: blue;
+	font-weight: bold;
+}
+
+.top_menu {
+	position: absolute;
+	right: 20px;
+	top: 30px;
+}
+
+.top_menu li {
+	display: inline;
+	margin-left: 20px;
+}
+
+#footer {
+	clear: both;
+	background-color: #292c32;
+	color: white;
+	padding: 20px;
+	height: 250px;
+}
+
+.ft_item {
+	float: left;
+	width: 380px;
+	margin-top: 50px;
+}
+
+.ft_item li {
+	display: inline;
+}
+
+.ft_item ul {
+	margin-bottom: 20px;
+}
+
+.ft_sns {
+	float: right;
+	width: 380px;
+	margin-top: 50px;
+	text-align: right;
+}
+
+.ft_sns img {
+	margin-left: 10px;
+}
+
+/*======================================푸터===================================  */
+/*======================================본문=================================== */
+.main {
+	background-image: url("img/sub_reservation.jpg");
+	height: 130px;
+	text-align: center;
+	color: white;
+	padding-top: 150px;
+	text-align: center;
+}
+
+.main .main_text {
+	margin-bottom: 15px;
+	
+}
+
+.main_box {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.calendar {
+	float: left;
+	background-color: #fcf9ea;
+	width: 600px;
+	height: 400px;
+	text-align: center;
+	margin-left: 600px;
+}
+
+.calendar_text {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.calendar .date_main {
+	width: 550px;
+	height: 300px;
+	background-color: white;
+	margin: 20px 10px 10px 20px;
+}
+
+.side {
+	float: right;
+	margin: 0 auto;
+	width: 400px;
+}
+
+.side.side name{ color: red;}
+
+.Ul{ margin: 20px 30px 0px 20px;
+padding-top: 30px; }
+.side li{ margin-bottom: 10px;
+}
+.text_green{color: green;
+padding-right: 40px; }
+
+.side_name1{padding-top: 30px;
+}
+
+.side_name1 .side_name2{border-left: solid 10px green;
+padding-left: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.red {
+	color: red;
+}
