@@ -19,17 +19,45 @@ html연결
 const rand1 = Math.floor((Math.random()*21))//엘베층
 const rand2 = Math.floor((Math.random()*21))//내가있는층
 */
-
+/*
 const rand1 = 10//엘베층
-const rand2 = 3 //내가있는층
+const rand2 = 1//내가있는층
 
-let E_number='' //난수저장
+ //난수저장
 
 if(rand1!=rand2){//if1 시작
 	if(rand1>rand2){//2if 시작
-		for(let i= ; i>= ;i++){
-			
+		for(let i=1 ; i>=rand1;i++){
+			alert('엘리베이터가 도착했습니다')
 		}
 	}
 }
+ */
+ let E_number=''
+ 
+ const rand1 = Math.floor((Math.random()*21))//엘베층
+const rand2 = Math.floor((Math.random()*21))//내가있는층
 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
