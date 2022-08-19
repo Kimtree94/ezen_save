@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+body {
+	background-image: url("webimg/예제이미지.png"),url("webimg/예제이미지2.png");
+	/* 배경이미지는 , 이용한 다수 이미지 적용 */
+	 background-position: left top , right top;
+						/* 첫번째 이미지위치 , 두번째이미지위치  */
+	background-repeat: no-repeat;
+	text-align: center;
+}
