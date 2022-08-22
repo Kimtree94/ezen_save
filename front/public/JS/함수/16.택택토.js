@@ -107,13 +107,6 @@ function 게임결과(){
 	
 	*/
 
-let count =0;
-for(let i=0;i<9;i++){
-	if(게임상황[i]=='X'){
-	count++;
-	}
-	if()
-}
 
 
 

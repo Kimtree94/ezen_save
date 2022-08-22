@@ -55,15 +55,15 @@ font-family: 'Notable', sans-serif;
 	height: 100vh;
 		scroll-snap-align: start;}
 .end .contactsns{display: flex;
-	justify-content: center;
- 
+	width:300px;
 	color: white;
-	background-repeat:no-repeat;}
-	
-a{
-	margin: 137px;
-}	
-	
+	background-repeat:no-repeat;
+text-align: center;
+padding-left: 800px;
+}
+
+
+
 	
 	
 	
