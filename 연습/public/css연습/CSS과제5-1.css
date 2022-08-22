@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+form {
+	width: 700px;
+	margin: 0 auto;
+}
+table {
+	width:600px;
+	margin :0 auto;
+	border-bottom: 1px solid #c0c0c0;
+	border-top: 1px solid #c0c0c0;
+	padding: 10px;
+}
+
+h3{
+	text-align: center;
+}
+tr {
+	padding: 10px;
+}
+td{
+	width: 200px;
+}
+td input {
+	width:200px;
+	height: 30px;
+	margin: 3px 5px;
+}
+.check{
+	width:20px
+	;
+	height: 10px;
+
+}
+.mail{
+	display: inline;
+}
+.mailbox{
+	width: 100px;
+}
+.direct{
+	width: 200px;
+	height: 35px;
+}
+.checkbox{
+	width: 100px;
+}
+.Ck{
+	width: 22px;
+	height: 10px;
+}
+textarea {
+	resize: none;
+}
+div {
+	width:600px;
+	margin: 0 auto;
+	text-align: right;
+}
+div input {
+	padding: 10px 11px;
+	margin: 10px;
+}
