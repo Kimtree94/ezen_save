@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+ /* 가상요소*/
+ 
+
+ ul li::before {
+   /*html 없는 css 에서 요소 만들기  */
+   content: "\f004";
+	font-family: "Font Awesome 5 Pro";
+	font-weight: 900;
+	color: #f66;
+	
+}

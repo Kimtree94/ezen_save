@@ -1,0 +1,120 @@
+@charset "UTF-8";
+.mainbox{
+	width: 25%;
+	height:100%;
+	margin: 0 auto;
+	
+}
+.mainlogo{
+	width: 100%;
+	height: 100%;
+	margin-top: 10%; 
+	margin-bottom: 3%;
+	color: #c0c0c0;
+	
+}
+.photo{
+	width: 196px;
+	height: 46px;
+	margin-left: 128px;
+}
+
+
+.full{display: flex;
+margin-bottom: 25px;}
+
+.mail_logo{
+
+border: solid 1px #c0c0c0;
+padding: 12px 14px;
+background-color: #fafafa;
+
+}
+
+.id_box{
+	border: solid 1px #c0c0c0;
+	height: 45px;
+	width: 400px;
+
+}
+.lock_logo{
+border: solid 1px #c0c0c0;
+padding: 13px 13px;
+background-color: #fafafa;
+}
+
+.pw_box{border: solid 1px #c0c0c0;
+	height: 40px;
+	width: 400px;
+	margin-bottom: 20px;
+}
+
+.autu_login{
+float: left;
+font-weight: bold;
+}
+
+.ID_PW_find{
+	float: right;
+}
+.ID_PW_find a{
+	text-decoration: none;
+	margin-right: 14px;
+}
+
+.login_Bt{
+	clear: both;
+	width: 454px;
+	color: white;
+	background-color: #0074e9;
+	justify-content: space-evenly;
+	margin-top: 12px;
+	height: 43px;
+	border: 1px solid  #0074e9;
+	border-radius: 5px;
+	box-shadow: 0 2px #004890;
+	font-size: 17px;
+	margin-bottom: 23px;
+}
+
+.class_Bt{
+	width: 455px;
+	height: 43px;
+	color: #0073e9;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	box-shadow: 0 2px #cccccc;
+	font-size: 17px;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+#footer{
+	text-align: center;
+	margin-left: -10;
+	margin-top: 25px;
+	font-size: 14px;
+	color: #555555;
+}
+
+.line{
+	width: 450px;
+	border: 0;
+	border-top: 1px solid #c0c0c0;
+	margin-right: 78px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

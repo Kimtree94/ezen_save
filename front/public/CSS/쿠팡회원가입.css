@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+#all_box{
+    min-width: 290px;
+    max-width: 460px;
+    _width: 460px;
+    padding: 0 4.35%;
+    padding: 0 20px;
+	border: 1px solid red;
+	margin: 0 auto;
+}
+#logo img{
+width: 14rem;
+height: 54px;
+margin: 0 auto;
+display: flex;
+}
+/*----------------------------------------  */
+.information{
+	padding: 20px;
+	text-align: left;
+	font-weight: bold;
+}
+.BOX{
+	width: 100%;
+	border: solid 1px #cccccc;
+	height: 51px;
+	display: flex;
+	margin: 15px 0px;
+}
+.logo_box{
+	width: 10%;
+	border-right:solid 1px #cccccc;
+	background-color:#fafafa;
+	padding: 8px;
+	font-size: 25px;
+	color: #cccccc
+}
+.text_box{
+	padding-top: 15px;
+}
+.agree{
+	border: none;
+	width: 100%;
+	font-weight: 900;
+}
+.agree_check_box{
+	display: flex;
+	padding: 16px 0px 6px 1px;
+}
+.YES{
+padding-left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.YES_side{
+	font-size: 11px;
+}
+.checkbox_border{
+	border: 1px solid #cccccc;
+	padding: 10px;
+}
+
+.checkbox{
+	    width: 4%;
+    margin: 11px 1px;
+}
+
+.BT_BOX{
+	width: 100%;
+	height:47px;
+	background-color: #0074e9;
+	color: white;
+	display: flex;
+	justify-content: center;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
