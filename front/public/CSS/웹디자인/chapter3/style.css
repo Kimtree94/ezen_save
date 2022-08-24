@@ -1,6 +1,60 @@
 @charset "UTF-8";
  
  
+ /*------------------------------------헤더------------------------------------------------- */
+ 
+ body{
+  color: #949087; font-family: '굴림';
+  background-image: url("../webimg/배경.png");
+ }
+ 
+ heder{
+ 	max-width: 1000px;
+ 	margin: 2.5rem auto 0;
+ 	background-image: url("../webimg/header.svg");
+ 	background-repeat: no-repeat;	/* 자동 채우기 제거 */
+ 	background-position: center;	/* 배경 위치 */
+ 	background-size: cover;			/* 배경 사이즈 */
+ 	height: 170px;
+ }
+ 
+ .page_title{
+ 	font-size: 30px;
+ 	font-family: '굴림';
+    text-align: center;
+  margin: 50px 0px;
+ }
+ .page_desc{
+ 	font-size: 14px;
+ 	font-family: '굴림';
+ 	text-align: center;
+margin-top: 10px;
+ }
+  /*------------------------------------컨테이너------------------------------------------------- */
+ 
+ .container{
+ max-width: 1000px;
+ margin: 0 auto;
+ background-color: white;
+ border-radius: 0 0 10px 10px;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  /*------------------------------------헤더------------------------------------------------- */
+ 
+ 
+ 
  .post_title{
  padding-bottom: 10px;    /* 아래 안쪽 여백  */
  

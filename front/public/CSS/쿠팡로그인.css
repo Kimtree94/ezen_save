@@ -38,9 +38,11 @@ background-color: #fafafa;
 
 }
 .lock_logo{
+height:15px;
 border: solid 1px #c0c0c0;
-padding: 13px 13px;
+padding: 13px 14px;
 background-color: #fafafa;
+
 }
 
 .pw_box{border: solid 1px #c0c0c0;

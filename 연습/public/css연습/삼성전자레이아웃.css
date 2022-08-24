@@ -1,0 +1,111 @@
+@charset "UTF-8";
+*{
+	border: 1px solid red;
+	text-align: center;
+}
+.All{
+	width: 1300px;
+	margin: 0 auto;
+}
+.top_menu{
+	display: flex;
+	justify-content: space-between;
+}
+.img{
+	width: 1299x;
+	height: 400px;
+}
+.sear{
+	width: 1298px;
+	height: 190px;
+}
+.why{width: 1298px;}
+.why_box{
+	display: flex;
+}
+.box1{
+	width: 200px;
+	height: 100px;
+}
+.ssl{
+	width: 1298px;
+	height: 100px;
+}
+.ssl_box{
+	display: flex;
+	justify-content: space-between;
+}
+.box2{
+	width: 300px;
+	height: 180px;
+}
+.service_n1{
+	width: 1298px;
+	height: 100px;
+}
+.service_box{
+	display: flex;
+	justify-content: space-between;
+}
+.box3{
+	width: 300px;
+	height: 100px;
+}
+.tip{
+	width: 1298px;
+	height: 400px;
+	
+}
+.story ,.notic{
+	width: 1298px;
+		height: 100px;
+}
+.story_box{
+	display: flex;
+	justify-content: space-between;
+}
+.box4{
+	width: 200px;
+	height: 100px;
+}
+.sssse{
+	display: flex;
+	justify-content: space-between;
+}
+.box5{
+	width: 230px;
+	height: 90px;
+}
+.nn1,.nn2,.sns,.end{
+	width: 1298px;
+	height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

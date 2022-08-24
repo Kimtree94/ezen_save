@@ -1,0 +1,53 @@
+*{
+	border: 1px solid red;
+}
+.All{
+	max-width: 1280px;
+	margin: 0 auto;
+}
+.login{
+	text-align: right;
+	height: 20px;
+}
+.top_menu{
+	display: flex;
+	justify-content: space-between;
+}
+.top_menu2{
+	width: 700px;
+	height: 30px;  
+}
+.logo,.search{
+	width: 200px;
+}
+.main_top{
+	display: flex;
+}
+.main_img{
+	
+width: 1000px;
+	height: 500px;
+}
+.sub_im1{
+	height: 200px;
+	width: 170px;
+}
+.main_under{
+	display: flex;
+}
+.main_under{
+	display: flex;
+	justify-content: space-around;
+}
+.box1{
+	width: 200px;
+	height: 180px;
+}
+.box2{
+	width: 180px;
+	height: 90px;
+}
+.under_all{
+	display: flex;
+	justify-content: space-between;
+}

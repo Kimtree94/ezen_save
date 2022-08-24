@@ -6,7 +6,7 @@
     _width: 460px;
     padding: 0 4.35%;
     padding: 0 20px;
-	border: 1px solid red;
+	
 	margin: 0 auto;
 }
 #logo img{
@@ -50,7 +50,7 @@ display: flex;
 }
 .YES{
 padding-left: 10px;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: bold;
 }
 .YES_side{
@@ -76,12 +76,37 @@ padding-left: 10px;
 	
 }
 
+.ck_box{
+	padding: 10px 0px;
+}
 
 
+.ck_box input{
+	zoom:1.6;
+}
+.agree_check_box input{
+	zoom:1.6;
+}
 
 
+.ck_box a{
+	float: right;
+	font-weight: bold;
+}
+.ck_box1{
+	padding: 10px 0px 10px 12px;
+}
 
+.BT_BOX{
+	margin-top: 25px;
+}
 
+.footer{
+	 text-align: center;
+    padding-top: 18px;
+    font-size: 12px;
+    color: #666666;
+}
 
 
 

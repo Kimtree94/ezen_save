@@ -7,7 +7,7 @@
 	
 	
 .top{
-	background-image: url("webimg/1.jpg");
+	background-image: url("../webimg/1.jpg");
 	height: 100vh;
 	background-size: cover;
 	background-position: center;
@@ -25,7 +25,7 @@
 .middle p1{display:table-footer-group;
 }
 .middle{
-	background-image:  url("webimg/Viva_La-Vida.jpg") ;width:100%;
+	background-image: url("../webimg/Viva_La-Vida.jpg") ;width:100%;
 	height: 100vh;
 	background-size: cover;
 	background-position: center;
@@ -40,7 +40,7 @@ font-family: 'Notable', sans-serif;
 }
 
 .bottom{
-	background-image: url("webimg/2.jpg");
+	background-image: url("../webimg/2.jpg");
 	width: 100%;
 	height: 100vh;
 	background-size: cover;
@@ -51,7 +51,7 @@ font-family: 'Notable', sans-serif;
 font-family: 'Notable', sans-serif;
 }
 .end{
-	background-image: url("webimg/4.jpg");
+	background-image: url("../webimg/4.jpg");
 	height: 100vh;
 		scroll-snap-align: start;}
 .end .contactsns{display: flex;
