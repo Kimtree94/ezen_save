@@ -11,7 +11,7 @@
  heder{
  	max-width: 1000px;
  	margin: 2.5rem auto 0;
- 	background-image: url("../webimg/header.svg");
+ 	background-image:url("../webimg/header.svg");
  	background-repeat: no-repeat;	/* 자동 채우기 제거 */
  	background-position: center;	/* 배경 위치 */
  	background-size: cover;			/* 배경 사이즈 */
