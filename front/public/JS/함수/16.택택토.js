@@ -15,7 +15,7 @@ function 게임판그리기(){ //f start
 	
 	승리 = ''//승리 변수를 공백으로 초기화
 	게임상황 = [null,null,null,null,null,null,null,null,null] // 배열에 9개 null로 초기화 
-	let 게임판 = '' // 빈 변수 선언 
+	let 게임판 = '' // 빈 변수 선언  
 	
 	for( let i = 0 ; i<9 ; i++ ){
 		// i는 0부터 9미만 까지 1씩증가 [ 8회 반복 ]
