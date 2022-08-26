@@ -235,14 +235,40 @@ article blockquote ::after {
 	font-size: 1.5rem;
 	color: #939587;
 }
+/*-------------------------footer------------------------  */
+footer{
+	background-color: #949087;
+	text-align: center;
+	padding: 3rem;
+}
+footer ul{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+footer li{
+	margin: 0px 12px;
+}
+
+footer a{
+	color: #ffffff;
+}
+footer a:hover{
+	color: #c7c3ba;
+}
+footer small{
+	color: #c7c3ba;
+	font-size: .875rem;
+}
+
+
+
+
 
 
 
 
 /*-------------------------미디어 쿼리------------------------  */
-
-
-
 
  /*미디어 쿼리 : 디바이스 크기에 따라 css 설정  */
  @media (min-width : 600px){ /* 가로사이즈 600px 이상일때 반응형 */
@@ -266,7 +292,10 @@ article blockquote ::after {
  	shape-outside:circle();
  	float: left;
  }
- 
+ .popular_post{
+ position: sticky;
+ top: 1rem;
+ }
  
  
 	/* 
