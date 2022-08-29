@@ -27,18 +27,21 @@ header h1{
 	font-size: 20rem;
 	text-align: center;
 	color: brown;}
+/*-----------------------------------------------------  */
 .photo{
 	display: flex;
 	background-color: black;
 	border-radius: 98px;
 }
+
 	
-.photo img{
+.photo img {
 display: flex;
 height: 869px;
 width: 37%;
 margin: 2px;
 border-radius: 94px;
+padding-top: 20px;
 
 }
 .over{
@@ -56,3 +59,50 @@ h1{
 .five{
 	background-color: black;
 }
+/*--------------------------------------------------  */
+.photo_2 img{
+	height: 869px;
+	width: 37%;
+	margin: 2px;
+	border-radius: 94px;
+	padding-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
