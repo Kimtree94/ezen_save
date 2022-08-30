@@ -1,4 +1,7 @@
 @charset "UTF-8";
+*{
+	font: '산돌네오고딕';
+}
 a{
 	text-decoration: none;
 }
@@ -32,4 +35,16 @@ li{
 	display: flex;
 }
 
-
+footer{background-color: black;
+color: white;
+}
+.ft_main ul{
+display: flex;	
+}
+.ft_main li{
+	margin: 5px 20px;
+}
+.ft_under{
+	display: flex;
+	justify-content: space-around;
+}
