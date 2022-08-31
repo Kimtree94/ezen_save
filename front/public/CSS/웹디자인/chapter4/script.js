@@ -137,10 +137,8 @@ function 지원자등록(){
 	지원자리스트.push(지원자)
 	console.log(지원자리스트)
 }
-for(let i=0 ;i<지원자리스트.length[i];i++){
-	
-}
 
+document.querySelector('submit')
 
 
 
