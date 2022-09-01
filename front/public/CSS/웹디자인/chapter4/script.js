@@ -138,12 +138,6 @@ function 지원자등록(){
 	console.log(지원자리스트)
 }
 
-document.querySelector('submit')
-
-
-
-
-
 
 
 
