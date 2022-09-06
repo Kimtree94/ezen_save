@@ -1,4 +1,4 @@
-package java1.a변수;
+package java1.ch1변수;
 
 //1.모든 코드는 클래스 안에서 작성
 public class EX2_자료형 {//class 시작

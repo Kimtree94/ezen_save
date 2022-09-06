@@ -1,4 +1,4 @@
-package java1.c조건문반복문;// 패키지면 
+package java1.ch3조건문반복문;// 패키지면 
 //1.클래스 선언
 public class EX1_IF {//class s
 

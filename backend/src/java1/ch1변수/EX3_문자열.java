@@ -1,4 +1,4 @@
-package java1.a변수;
+package java1.ch1변수;
 
 public class EX3_문자열 { //class시작
 	public static void main(String[] args) {//main s

@@ -1,4 +1,4 @@
-package java1.c조건문반복문;
+package java1.ch3조건문반복문;
 
 public class EX3_FOR {//class s
 	public static void main(String[] args) {//main s
