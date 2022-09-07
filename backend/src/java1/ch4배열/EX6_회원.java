@@ -50,7 +50,7 @@ public class EX6_회원 {//class S
 												memberlist[j][1] = memberlist[j+1][1];
 												memberlist[j][2] = memberlist[j+1][2];
 												memberlist[j][3] = memberlist[j+1][3];
-												//다음 인덱스의 null이면 [회원이 없다는 뜻으로]
+												//다음 인덱스가 null이면 [회원이 없다는 뜻으로]
 												if(memberlist[j+1][0]==null)break;
 											}//for end
 										//-------------------------------------------------//
