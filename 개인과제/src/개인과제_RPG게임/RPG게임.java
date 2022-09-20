@@ -104,7 +104,7 @@ public class RPG게임 {
 						}//물약구입 if E
 					
 					}//상점 구매 else if E
-					System.out.println();
+					System.out.println("▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀");
 					System.out.println("\t\t마을로 돌아왔습니다");
 					continue;
 					}//마을 While E
