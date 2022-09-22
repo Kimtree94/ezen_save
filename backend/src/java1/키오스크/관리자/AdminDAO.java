@@ -58,7 +58,7 @@ public class AdminDAO {
 		String sql="select*from menu";
 		try {
 			ps = con.prepareStatement(sql);
-			rs=ps.executeQuery();
+			rs=ps.executeQuery();  
 			while(rs.next()) { // rs.next : 다음 레코드
 				// 검색 레코드 -> 객체화
 				MenuDTO menu = new MenuDTO(rs.getInt(1),rs.getString(2));
