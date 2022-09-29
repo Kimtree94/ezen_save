@@ -13,9 +13,9 @@ public class Main {
 		 B =scanner.nextInt();
 		 C =scanner.nextInt();
 		
-		System.out.println((A+B)%C);
-		System.out.println((A%C)+(B%C)%C);
-		System.out.println((A*B)%C);
-		System.out.println((A%C)*(B%C)%C);
+		System.out.print((A+B)%C);
+		System.out.print((A%C)+(B%C)%C);
+		System.out.print((A*B)%C);
+		System.out.print((A%C)*(B%C)%C);
 	}//main E
 }//class E
