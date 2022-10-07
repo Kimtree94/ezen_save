@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
+	<%@include file="../header.jsp" %>
+	<div class="webbox">
 	<h3>회원가입 페이지</h3>
 	<form action="/jspweb/member/signup" method="post" >
 	아이디 :
@@ -35,6 +36,7 @@
 	
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript" src="../js/member/singup.js"></script>
+	</div>
 
 </body>
 </html>

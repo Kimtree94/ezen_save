@@ -4,19 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
-	<%@include file="header.jsp" %>
-	
-	<div class="webbox">
-	<img alt="" src="/img/mainimg.jpg">
-	 <h3> 메인 페이지</h3>
-	</div>
 
-
-
-
+<script src="Chapter2.js" type="text/javascript" ></script>
 </body>
 </html>
-
-

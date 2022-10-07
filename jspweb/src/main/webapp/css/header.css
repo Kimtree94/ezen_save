@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/* 
+	식별자 { 속성 = 값 }
+		1. class  .클래스명{}
+		2. id 	  #id{}
+		3. name
+		4. 태그명
+
+	복수 식별자 
+		식별자 , 식별자 , 식별자 { } 
+	n번째 하위 식별자 선택
+		식별자 : nth-child( n )		: 복수 하위 식별자중 n번째 식별자 선택 
+ */
+@font-face {
+	font-family: 'ulsanjunggu';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/ulsanjunggu.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+	list-style: none;
+	color: black;
+	font-family: '맑은 고딕';
+}
+
+.webbox {
+	width: 1200px; /* 가로길이  */
+	margin: 0 auto;
+}
+/*----------------------------상단 헤더-----------------------------------  */
+.hd_top {
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 0px 20px 0px
+}
+
+.hd_sub {
+	display: flex;
+	font-size: 12px;
+	align-items: center;
+}
+
+.hd_sub li {
+	margin-left: 20px;
+}
+
+.hd_title a {
+	font-family: 'ulsanjunggu';
+	font-size: 35px;
+}
+
+/*----------------------------하단 헤더-----------------------------------  */
+.hd_menu {
+	display: flex;
+	justify-content: space-between;
+}
+.searchbox input{border: none;}
+.searchbox span{ border-bottom:solid 2px #c0c0c0; margin:0px 20px 0px 150px; margin-bottom: 20px;}
+.fa-search,.fa-shopping-cart{font-size: 20px;}
+
+
+.hd_menu li:nth-child(1) a {color:red; font-weight: bold;}
+.hd_menu li:nth-child(2) a {color:blue; font-weight: bold;}
+.hd_menu li:nth-child(10) a {color:#c0c0c0; font-weight: bold;}
+.hd_menu li:nth-child(11) a {color:skyblue; font-weight: bold;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
