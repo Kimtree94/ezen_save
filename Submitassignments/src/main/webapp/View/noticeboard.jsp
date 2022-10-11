@@ -4,16 +4,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
 	<h3> 게시판 작성</h3>
-	<form action="/Submitassignments/View/notice" method="post">
-		제목 : <input type="text" name="ntitle"><br>
-		본문 : <textarea rows="15" cols="15" name="ncontent"	style="resize: none; text-align: center;"> </textarea><br>
-		작성자 : <input type="text" name="nwriter"><br>
-		비밀번호 : <input type="password" name="nPassword"><br>
-		<input type="submit" value="게시물등록">
-	</form>
+		제목 : <input type="text" id="ntitle"><br>
+		본문 : <textarea rows="15" cols="15" id="ncontent"style="resize: none; text-align: center;"> </textarea><br>
+		작성자 : <input type="text" id="nwriter"><br>
+		비밀번호 : <input type="password" id="nPassword"><br>
+		<button onclick="notice()">게시물등록</button>
+	<div id="webbox">
+		<h3> 글목록 </h3>
+		<table id="noticlist">
+		</table>
+		삭제할 글 번호<input type="text" id="deletenum"> 
+		비밀번호<input type="password" id="deletepassword">
+		<button onclick="deletebox()">삭제하기</button>
+	</div>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src=../js/member/noticelist.js></script>
+
 </body>
-</html>
+</html>	

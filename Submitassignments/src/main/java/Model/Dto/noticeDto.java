@@ -13,6 +13,14 @@ public class noticeDto {
 		super();
 	}
 
+	public noticeDto(String ntitle, String ncontent, String nwriter, String nPassword) {
+		super();
+		this.ntitle = ntitle;
+		this.ncontent = ncontent;
+		this.nwriter = nwriter;
+		this.nPassword = nPassword;
+	}
+
 	public noticeDto(int nNum, String ntitle, String ncontent, String nwriter, String nPassword, String ndate,
 			int nview) {
 		super();
