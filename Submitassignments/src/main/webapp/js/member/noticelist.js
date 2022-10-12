@@ -66,7 +66,7 @@ function deletebox(){
 			if(result=='true'){
 				 alert('삭제성공')
 			}else{
-				alert('삭제실패 ')
+				alert('패스워드가 틀립니다.')
 			}
 		}
 	})

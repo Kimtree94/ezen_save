@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Model.Dao.noticDao;
 
@@ -25,8 +26,11 @@ public class deletebox extends HttpServlet {
 		
 		String deletenum =request.getParameter("deletenum");
 		String deletepassword = request.getParameter("deletepassword");
+		String delete = (String)request.getSession().getAttribute("deletenum");
 		boolean result = noticDao.getInstance().deletebox(deletenum,deletepassword);
 		response.getWriter().print(result);
+		
+	
 		System.out.println(result);
 	}
 
