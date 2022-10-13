@@ -16,11 +16,17 @@
 		<h3> 글목록 </h3>
 		<table id="noticlist">
 		</table>
-		삭제할 글 번호<input type="text" id="deletenum"> 
-		비밀번호<input type="password" id="deletepassword">
+		삭제할 글 번호<input type="text" id="nNum"> 
+		비밀번호<input type="password" id="nPassword2">
 		<button onclick="deletebox()">삭제하기</button>
+		
+		<div>
+			<table id="detail">
+			</table>
+		
+		</div>
 	</div>
-<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src=../js/member/noticelist.js></script>
 
 </body>

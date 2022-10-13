@@ -50,18 +50,41 @@ public class noticDao extends DAO {
 	}
 
 	// 글삭제
-	public boolean deletebox(String deletenum, String deletepassword) {
-		String sql = "delete from notice where nNum=? and nPassword=?";
+	public boolean deletebox(String nNum, String nPassword) {
+		String sql = "delete from notice where nNum= ? and nPassword=?";
 		try {
 			ps = con.prepareStatement(sql);
-			ps.setString(1, deletenum);
-			ps.setString(2, deletepassword);
-			int count = ps.executeUpdate();
-			if(count==1) {return true;}
+			ps.setString(1, nNum);
+			ps.setString(2, nPassword);
+			int count =ps.executeUpdate();
+				if(count==1) {return true;}
 		} catch (Exception e) {
 			System.out.println(e);
 		}return false;
 
 	}
+	
+	//선택시 글출력 
+	
+	public boolean detaile(String nNum) {
+		String sql = "select * from notice where nNum=? ";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, nNum);
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				noticeDto dto = new noticeDto(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
+				return true;
+			}
+		} catch (Exception e) {System.out.println(e); }
+		return false;
+	}
+	
+	
+	
+	
+	
+	
+	
 
 }

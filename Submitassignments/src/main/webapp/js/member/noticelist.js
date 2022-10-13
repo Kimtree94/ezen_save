@@ -2,7 +2,6 @@
 noticelist();
 
 
-
 function notice(){
 	let ntitle=document.querySelector("#ntitle").value;
 	let ncontent=document.querySelector("#ncontent").value;
@@ -31,23 +30,24 @@ function noticelist(){
 				let table = document.querySelector("#noticlist");
 				
 				let tag = '<tr>' +
-				'<td> 제목 </td>' +
-				'<td> 내용 </td>' +
-				'<td> 작성자 </td>' +
-				'<td> 작성일 </td>' +
-				'<td> 조회수 </td>' +
+				'<td>| 번호 |</td>' +
+				'<td> 제목 |</td>' +
+				'<td> 내용 |</td>' +
+				'<td> 작성자 |</td>' +
+				'<td> 작성일 |</td>' +
+				'<td> 조회수 |</td>' +
 				'</tr>';
 				
 				for(let i =0 ; i<memberlist.length;i++){
 					let m = memberlist[i]
 					
 					tag+= '<tr>' +
-				'<td>' + m.nNum + '</td>' +
-				'<td>' + m.ntitle + '</td>' +
-				'<td>' + m.ncontent + '</td>' +
-				'<td>' + m.nwriter + '</td>' +
-				'<td>' + m.ndate + '</td>' +
-				'<td>' + m.nview + '</td>' +
+				'<td >' + m.nNum + '</td>' +
+				'<td onclick="detail()"|' + m.ntitle + '|</td>' +
+				'<td>' + m.ncontent + '|</td>' +
+				'<td>' + m.nwriter + '|</td>' +
+				'<td>' + m.ndate + '|</td>' +
+				'<td>' + m.nview + '|</td>' +
 				'</tr>';
 				}
 			table.innerHTML=tag;
@@ -57,11 +57,12 @@ function noticelist(){
 }
 
 function deletebox(){
-	let deletebox = document.querySelector("#deletenum").value;
-	let deletepassword = document.querySelector("#deletepassword").value;
+	let nNum = document.querySelector("#nNum").value;
+	let nPassword2 = document.querySelector("#nPassword2").value
+	console.log("비번"+nPassword)
 	$.ajax({
 		url:"/Submitassignments/member/deletebox",
-		data : {"deletenum": deletenum,"deletepassword":deletepassword},
+		data : {"nNum": nNum,"nPassword2":nPassword2},
 		success : function(result){
 			if(result=='true'){
 				 alert('삭제성공')
@@ -70,9 +71,22 @@ function deletebox(){
 			}
 		}
 	})
+	
 }
 
-
+function detail(nNum){
+	$.ajax({
+		url : "/Submitassignments/member/dtail",
+		data : {"nNum":nNum},
+		success:function(re){
+			if(re=='true'){
+				
+			}
+		}
+		
+		
+	})
+}
 
 
 

@@ -16,27 +16,28 @@ import Model.Dao.noticDao;
 @WebServlet("/member/deletebox")
 public class deletebox extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public deletebox() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String deletenum =request.getParameter("deletenum");
-		String deletepassword = request.getParameter("deletepassword");
-		String delete = (String)request.getSession().getAttribute("deletenum");
-		boolean result = noticDao.getInstance().deletebox(deletenum,deletepassword);
-		response.getWriter().print(result);
-		
-	
-		System.out.println(result);
+	public deletebox() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String nNum = request.getParameter("nNum");
+		String nPassword = request.getParameter("nPassword2");
+
+		boolean result = noticDao.getInstance().deletebox(nNum, nPassword);
+		
+		response.getWriter().print(result);
+		
+		System.out.println("자바"+result);
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 	}
 
 }
