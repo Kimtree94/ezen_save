@@ -41,6 +41,8 @@ public class noticelist extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(array);
 	}
+	
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}

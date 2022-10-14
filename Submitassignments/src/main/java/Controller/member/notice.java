@@ -31,6 +31,7 @@ public class notice extends HttpServlet {
 		String nPassword = request.getParameter("nPassword");
 		
 		noticeDto dto = new noticeDto(ntitle, ncontent, nwriter,  nPassword);
+		System.out.println(dto);
 		// 2. DAO DB메소드 호출
 		boolean result = noticDao.getInstance().board(dto);
 		System.out.println(result);

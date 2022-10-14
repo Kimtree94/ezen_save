@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,27 +23,14 @@
 		response.sendRedirect("../member/login.jsp");
 	}
 	%>
-
-
+	<h3>글 수정 </h3>
 	<div class="webbox">
-		<h3>글쓰기</h3>
-
-		<!--  1. form = 동기식 [페이지전환O] 2. ajax=[페이지전환X] 중 1개 선택  -->
-
-		<!-- 1.form 형식 -->
-		<!-- <form method="get" action="/jspweb/board/write">
-		제목 : <input type="text" name="btitle"> <br>
-		내용 : <input type="text" name="bcontent">
-			<button type="submit">작성하기</button>
-		</form> -->
-
-		<!-- 2.ajax형식 -->
 		<form>
 			제목 : <input type="text" name="btitle" id="btitle"> <br>
 			내용 :<textarea id="summernote" name="editordata"></textarea><br>
 			첨부파일 : <input type="file" name="bfile"><br>
 		<!-- form태그 안에서 button 사용시에는 type 필수로 넣기 -->
-			<button type="button" onclick="bwrite()">작성하기</button>
+			<button type="button" onclick="bupdate()">수정하기</button>
 		</form>
 	</div>
 		<!-- 썸머노트 API js -->
@@ -57,6 +44,6 @@
 	
 
 
-<script type="text/javascript" src="../js/board/write.js"></script>
+<script type="text/javascript" src="../js/board/update.js"></script>
 </body>
 </html>

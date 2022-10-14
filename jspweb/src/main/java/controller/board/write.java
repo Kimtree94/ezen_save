@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.catalina.filters.ExpiresFilter.XServletOutputStream;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
 import model.dao.BoardDao;
 import model.dao.MemberDao;
 
@@ -22,20 +25,22 @@ public class write extends HttpServlet {
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	String mid= (String)request.getSession().getAttribute("mid");	
-	int mno = MemberDao.getInstance().getMno(mid);
-	
-	String btitle =request.getParameter("btitle");
-	String bcontent = request.getParameter("bcontent");
-	
-	boolean result = BoardDao.getInstance().write(btitle, bcontent,mno);
-	System.out.println(result);
+		/*
+		 * String mid= (String)request.getSession().getAttribute("mid"); //1 . 로그인 세션 [
+		 * 로그인한 사람의 아이디] 가져오기 int mno = MemberDao.getInstance().getMno(mid); //2 .
+		 * mid--->mno로 //fk 는 pk에 있는 데이터만 저장가능 [ 무결성 ] String btitle
+		 * =request.getParameter("btitle"); //3. 전달할 변수 요청 String bcontent =
+		 * request.getParameter("bcontent"); // '' System.out.println(btitle);
+		 * System.out.println(bcontent);
+		 */
+	//boolean result = BoardDao.getInstance().write(btitle, bcontent,mno);	// DAO호출후 결과 저장 
+	//System.out.println(result);
 	/* form전송용	*/
 	//if(result) {response.sendRedirect("list.jsp");}
 	//else {response.sendRedirect("write.jsp");}
 	/* js 전송용	*/
 	
-	response.getWriter().print(result);
+	//response.getWriter().print(result);									//5. 결과를 AJAX 에 전달 
 	}
 
 	public write() {
@@ -45,8 +50,71 @@ public class write extends HttpServlet {
 	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
 
+	//1. 첨부파일[ cos.jar 라이브러리 필요 ]
+		//1. cos.jar 빌드 추가 
+		//2. HttpServl;etRequest : 첨부파일 지원X [ 소량의 문자만 지원 ]
+		//3. MultipartRequest : 첨부파일 지원O [ 대용량의 문자 가능]
+			// 첨부파일 : http post 메소드 지원
+		//new MultipartRequest( 1.요청방식 , 2.파일저장경로 , 3.최대용량범위(바이트) , 4.인코딩타입 , 5.기타(보안기능 등)
+				//1비트 ( 0 ,1 ) ---> 1바이트 ( 0101111 : 8비트 ) - >1kb(1024b) - > 1mb(1024kb) - >1G(1024MB)
+	//1. 저장 경로 [ 프로젝트 저장 ]
+		String uploadpath ="C:\\Users\\504\\git\\ezen_save\\jspweb\\src\\main\\webapp\\upload";
+	
+	//2. Multipart 객체 생성	
+		MultipartRequest multi = new  MultipartRequest(
+			request,//1,요청방식
+			uploadpath, //2. 저장 경로 
+			1024 * 1024	* 10,//3.용량 1MB [ 1024 : 1kb / 1024*1024 : 1mb / 1024*1024*1024 : 1GB ]
+			"UTF-8" , 		//4. 인코딩
+			new DefaultFileRenamePolicy() //5. 업로드된 파일의 이름이 중복일경우 자동으로 이름 변경
+		
+			);// 생성자 END
+		
+	//3. 해당 저장경로에 첨부파일 업로드가 된다.
+	
+	//4. 나머지 데이터를 직접 요청 
+		String btitle = multi.getParameter("btitle"); // request -> multi
+			System.out.println(btitle);	// 확인용
+		String bcontent = multi.getParameter("bcontent");
+			System.out.println(bcontent); // 확인용
+			//* 어떤 파일을 업로드 했는지 DB에 저장할 첨부파일의 이름 혹은 경로 를 가져와야함(호출)
+		String bfile = multi.getFilesystemName("bfile");//첨부파일된 이름 호출시 : getFilesystemName
+			System.out.println(bfile);
+			//*회원번호 --->회원아이디
+		int mno = MemberDao.getInstance().getMno((String)request.getSession().getAttribute("mid"));
+	//5.db처리
+	boolean reult = BoardDao.getInstance().write(btitle, bcontent, mno,bfile);
+	//6.응답
+	System.out.println(reult);
+	response.getWriter().print(reult);
+	
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
