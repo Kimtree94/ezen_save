@@ -37,7 +37,7 @@ public class dtail extends HttpServlet {
 			object.put("nwriter", dto.getNwriter());
 			object.put("ndate", dto.getNdate());
 			object.put("nview", dto.getNview());
-			System.out.println("date :"+dto.getNdate());
+			System.out.println("date :"+dto.getNtitle());
 			array.add(object);
 			
 		}

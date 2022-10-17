@@ -3,6 +3,7 @@ package Model.Dao;
 import java.util.ArrayList;
 
 import Model.Dto.noticeDto;
+import Model.Dto.recomentDto;
 
 public class noticDao extends DAO {
 	private static noticDao ndao = new noticDao();
@@ -52,6 +53,7 @@ public class noticDao extends DAO {
 
 	// 글삭제
 	public boolean deletebox(String nNum, String nPassword) {
+		System.out.println("자바 :"+nNum+"/2 :"+nPassword);
 		String sql = "delete from notice where nNum= ? and nPassword=?";
 		try {
 			ps = con.prepareStatement(sql);
@@ -85,11 +87,49 @@ public class noticDao extends DAO {
 		return list;
 	}
 	
-	
-	
-	
-	
-	
-	
+	//선택시 조회수 증가 
+	public boolean count(String nNum) {
+		System.out.println("DAO :"+nNum);
+	String sql = "UPDATE notice SET nview = IFNULL(nview, 0) + 1 WHERE nNum=?";	
+		try {
+			ps= con.prepareStatement(sql);
+			ps.setString(1, nNum);
+			ps.executeUpdate();
+			return true;
+		} catch (Exception e) {System.out.println(e);}return false;
+	}
 
+	//댓글 등록 
+	public boolean recoment(String recoment ,String rewriter) {
+		String sql = "INSERT INTO recoment( rcontent , rwriter ) VALUES( ?, ?) ";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, recoment);
+			ps.setString(2, rewriter);
+			ps.executeUpdate();
+			return true;
+		} catch (Exception e) {System.out.println("오류:"+e);}return false;
+	}
+	//댓글 출력
+	public ArrayList<recomentDto> recomentlist(){
+		ArrayList<recomentDto> list = new  ArrayList<>();
+		String sql = "select * from recoment";
+		try {
+			ps= con.prepareStatement(sql);
+			rs=ps.executeQuery();
+			while(rs.next()) {
+				recomentDto dto = new recomentDto(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4));
+				System.out.println("댓글리스트/"+dto);
+				list.add(dto);
+				return list;
+			}
+		} catch (Exception e) {System.out.println("sql오류 : "+e);}
+		return list;
+	}
+	
+	
+	
+	
+	
+	
 }
