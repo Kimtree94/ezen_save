@@ -58,9 +58,13 @@ public class write extends HttpServlet {
 			// 첨부파일 : http post 메소드 지원
 		//new MultipartRequest( 1.요청방식 , 2.파일저장경로 , 3.최대용량범위(바이트) , 4.인코딩타입 , 5.기타(보안기능 등)
 				//1비트 ( 0 ,1 ) ---> 1바이트 ( 0101111 : 8비트 ) - >1kb(1024b) - > 1mb(1024kb) - >1G(1024MB)
-	//1. 저장 경로 [ 프로젝트 저장 ]
-		String uploadpath ="C:\\Users\\504\\git\\ezen_save\\jspweb\\src\\main\\webapp\\upload";
-	
+	//1. 저장 경로 [ 개발중인 프로젝트 폴더 저장 ]
+		//String uploadpath ="C:\\Users\\504\\git\\ezen_save\\jspweb\\src\\main\\webapp\\upload";//jspweb
+	//1-1 저장 경로 [ 배포된 프로젝트의 (서버) 폴더 저장 ]
+		//1. 현재 배포된 프로젝트의 경로 찾기 
+		String uploadpath =  request.getSession().getServletContext().getRealPath("/upload"); //최상위 경로 //jspweb/upload(폴더명)
+		System.out.println(uploadpath);
+		
 	//2. Multipart 객체 생성	
 		MultipartRequest multi = new  MultipartRequest(
 			request,//1,요청방식
@@ -86,7 +90,7 @@ public class write extends HttpServlet {
 	//5.db처리
 	boolean reult = BoardDao.getInstance().write(btitle, bcontent, mno,bfile);
 	//6.응답
-	System.out.println(reult);
+	System.out.println("결과값 ///"+reult);
 	response.getWriter().print(reult);
 	
 	}

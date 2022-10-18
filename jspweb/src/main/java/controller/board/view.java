@@ -40,7 +40,7 @@ public class view extends HttpServlet {
 		object.put("bno", dto.getBno());
 		object.put("btitle", dto.getBtitle());
 		object.put("bcontent", dto.getBcontent());
-		object.put("mid", dto.getMno());
+		object.put("mid", dto.getMid());
 		object.put("bfile", dto.getBfile());
 		
 			//* 삭제 , 수정 버튼 활성화를 위한 식별변수 선언 [ 본인글인지 판단 ]
@@ -56,7 +56,6 @@ public class view extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(object);
 		
-		System.out.println(object);
 		
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

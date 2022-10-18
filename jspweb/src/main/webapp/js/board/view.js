@@ -5,30 +5,30 @@ function bview() {
 		url: "/jspweb/board/view",
 		success: function(re) {
 			let board = JSON.parse(re)
-			console.log(board)
 			document.querySelector(".bno").innerHTML = board.bno
 			document.querySelector(".btitle").innerHTML = board.btitle
 			document.querySelector(".bcontent").innerHTML = board.bcontent
-			document.querySelector(".mid").innerHTML = board.mno
+			document.querySelector(".mid").innerHTML = board.mid;
 			/*/jspweb/board/filedown */
 			/*
 				<a href="URL?변수명=데이터">
 			*/
-
+		
 			if (board.bfile !== null) { // null , undefined , 0 , false
 				let filelink = '<a href="../board/filedown?bfile=' + board.bfile + '">' + board.bfile + '</a>'
 				//' '  : 전체 문자열 처리
 				//" "  : 전체 문자열내 문자열 구분
 				document.querySelector(".bfile").innerHTML = filelink;
 			}
+			
 			let btnbox = document.querySelector(".btnbox")
-			if(board.btnaction==true){
-			//삭제 버튼 활성화 
-			let deletbtn = '<button onclick="bdelete('+board.bno+')"> 삭제 </button>';
-			btnbox.innerHTML+=deletbtn;		
-			// 수정 버튼 활성화 
-			let updatebtn = '<button><a href="../board/update.jsp">수정하기</a></button>'
-			btnbox.innerHTML+=updatebtn;	
+			if (board.btnaction == true) {
+				//삭제 버튼 활성화 
+				let deletbtn = '<button onclick="bdelete(' + board.bno + ')"> 삭제 </button>';
+				btnbox.innerHTML += deletbtn;
+				// 수정 버튼 활성화 
+				let updatebtn = '<button><a href="../board/update.jsp">수정하기</a></button>'
+				btnbox.innerHTML += updatebtn;
 			}
 
 		}

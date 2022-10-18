@@ -1,17 +1,12 @@
 
-
-/* 썸머노트 실행 */
-$(document).ready(function() {
-	$('#summernote').summernote({
-	placeholder : ' 내용을 입력하세요 ',
-	maxHeight : null , 
-	minHeight : 300,
-	lang:'ko-kr'
-	});
-	
-	
-	
-	
+/*썸머노트*/
+  $(document).ready(function() {
+     $('#summernote').summernote({
+      pliaceholder : '내용입력',
+        maxHeight : null,
+        minHeight : 300,
+        lang : 'ko-KR'
+   });
 });
 
 

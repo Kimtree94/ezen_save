@@ -26,10 +26,15 @@
 	<h3>글 수정 </h3>
 	<div class="webbox">
 		<form>
-			제목 : <input type="text" name="btitle" id="btitle"> <br>
-			내용 :<textarea id="summernote" name="editordata"></textarea><br>
-			첨부파일 : <input type="file" name="bfile"><br>
-		<!-- form태그 안에서 button 사용시에는 type 필수로 넣기 -->
+			제목 : <input type="text" name="btitle" class="btitle"> <br>
+			내용 :<textarea name="editordata" id="bcontent" class="bcontent"></textarea><br>
+			첨부파일 : <input type="file" name="bfile" class="bfile"><br>
+			
+			<!-- 기존 첨부파일 이름과 삭제버튼 표시 구역  -->
+			<div id="oldbfilebox" class="oldbfilebox"></div>
+			
+			
+			<!-- form태그 안에서 button 사용시에는 type 필수로 넣기 -->
 			<button type="button" onclick="bupdate()">수정하기</button>
 		</form>
 	</div>

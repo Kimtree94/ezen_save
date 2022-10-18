@@ -48,6 +48,10 @@ pageEncoding="UTF-8"%>
 				<th> 작성일 </th><th> 조회수 </th>
 			</tr>	
 		</table>
+		<div class="pagebox">
+		
+		
+		</div>
 	</div>
 	
 	<!-- 부트스트랩 JS -->
