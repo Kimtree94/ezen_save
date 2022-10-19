@@ -40,6 +40,15 @@ pageEncoding="UTF-8"%>
 			</table>
 			%> --%>
 		
+		<!-- 6. 화면에 표시할 게시물 수 -->
+		<div>
+			<select class="listsize" onchange="blistsize()">
+				<option value="5"> 5 </option>
+				<option value="10"> 10 </option>
+				<option value="15"> 15 </option>
+				<option value="20"> 20 </option>
+			</select>
+		</div>
 		
 		<!-- JS로 테이블 표시    [ HTML(JSP) --- JS ---- 서블릿 --- DAO ] -->
 		<table class="btable table">
@@ -52,6 +61,18 @@ pageEncoding="UTF-8"%>
 		
 		
 		</div>
+		
+		<div> <!-- 4. 검색처리 구역 -->
+			<select class="key">
+				<option value="b.btitle">제목</option>
+				<option value="b.bcontent">내용</option>
+				<option value="m.mid">작성자</option>
+			</select>
+			<input class="keyword" type="text" placeholder="검색어">
+			<button type="button" onclick="bsearch()">검색</button>
+		</div>
+		
+		
 	</div>
 	
 	<!-- 부트스트랩 JS -->

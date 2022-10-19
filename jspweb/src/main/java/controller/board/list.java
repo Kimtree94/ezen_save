@@ -27,13 +27,17 @@ public class list extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//1. 요청 x
+		
+		request.setCharacterEncoding("UTF-8");
+		//검색처리 //
+		String key = request.getParameter("key");
+		String keyword = request.getParameter("keyword");
 		
 		//1. 페이지당 게시물수
 		int listsize=Integer.parseInt( request.getParameter("listsize")); //3 
 			
-		//2. 전체 게시물수 
-		int totalsize = BoardDao.getInstance().gettotalsize(); //현재 14
+		//2. 전체 게시물수 VS(추가) 검색된 게시물 수 
+		int totalsize = BoardDao.getInstance().gettotalsize(key , keyword); //현재 14
 		
 		//3. 전체 페이지수 계산
 		int totalpage = 0;  
@@ -72,14 +76,13 @@ public class list extends HttpServlet {
 		JSONObject boards = new JSONObject();
 		
 		//2. DB
-		ArrayList<BoardDto> list = BoardDao.getInstance().getlist(startrow , listsize);
+		ArrayList<BoardDto> list = BoardDao.getInstance().getlist(startrow , listsize , key , keyword);
 			//** arraylist --> jsonarray 변환 [js에서 쓸려고]
 			JSONArray array = new JSONArray();
 			for(int i=0 ; i<list.size();i++) {
 				JSONObject object = new JSONObject();
 				object.put("bno", list.get(i).getBno());
 				object.put("btitle", list.get(i).getBtitle());
-				object.put("bcontent", list.get(i).getBcontent());
 				object.put("bdate", list.get(i).getBdate());
 				object.put("bview", list.get(i).getBview());
 				object.put("mid", list.get(i).getMid());
@@ -90,6 +93,7 @@ public class list extends HttpServlet {
 			boards.put("data", array);
 			boards.put("startbtn", startbtn);
 			boards.put("endbtn", endbtn);
+			boards.put("totalsize", totalsize);
 			
 		//3. 응답 
 	response.setCharacterEncoding("UTF-8");

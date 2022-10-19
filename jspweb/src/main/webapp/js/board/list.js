@@ -2,7 +2,9 @@
 
 let pageinfo = {
 	listsize : 3, 	// 한페이지당 게시물 표시 개수
-	page : 1 	  	// 현재페이지번호 
+	page : 1 ,	  	// 현재페이지번호 
+	key: '',
+	keyword:''
 }
 
 
@@ -75,21 +77,18 @@ function viewload(bno){
 
 }
 
-/*
-function bview(bno){
-	$.ajax({
-		url : "/jspweb/board/view",
-		data:{"bno":bno},	
-		success : function(re){
-			let board = JSON.parse(re)
-			console.log (board)
-			}
-	})
-
+//4. 검색처리함수
+function bsearch(){
+	pageinfo.key = document.querySelector('.key').value
+	pageinfo.keyword = document.querySelector('.keyword').value
+	list(1)
 }
-*/
 
-
+//6. 게시물 표시 개수 
+function blistsize(){
+	pageinfo.listsize = document.querySelector('.listsize').value
+	list( 1 )
+}
 
 
 
