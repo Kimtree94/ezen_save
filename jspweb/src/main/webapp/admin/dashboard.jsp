@@ -23,7 +23,7 @@
 		<h1> 관리자 메뉴 </h1>
 		<ul class="side_menu">
 			<li class="side_item"><a onclick="pagechange('regist.jsp')">제품 등록</a></li>
-			<li class="side_item"><a href="#">제품 목록</a></li>
+			<li class="side_item"><a onclick="pagechange('list.jsp')">제품 목록</a></li>
 			<li class="side_item"><a href="#">재고 관리</a></li>
 			<li class="side_item"><a href="#">주문 관리</a></li>
 			<li class="side_item"><a href="#">매출 관리</a></li>

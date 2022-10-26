@@ -52,10 +52,7 @@ public class MemberDao extends Dao {
 				} // 로그인성공
 				return 2;// 패스워드가 틀렷다
 			}
-		} catch (Exception e) {
-			System.out.println(e);
-			return 3;
-		} // 데이터베이스오류뜻
+		} catch (Exception e) {System.out.println(e);return 3;} // 데이터베이스오류뜻
 		return 0;// 아이디 없다는 뜻
 	}
 
