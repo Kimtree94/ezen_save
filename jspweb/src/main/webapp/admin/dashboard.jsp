@@ -17,7 +17,7 @@
 	%>
 	<!-- marquee : 텍스트 슬라이드(전광판) / 속성: scrollamount : 슬라이드 속도 -->
 	<marquee scrollamount="10"> 공지사항 표시되는 위치 </marquee>	
-	
+	 
 	<!-- 사이드바 [ 펼치기/접기 ] -->
 	<div class="sidebar">
 		<h1> 관리자 메뉴 </h1>

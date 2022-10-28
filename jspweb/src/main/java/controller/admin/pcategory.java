@@ -49,7 +49,6 @@ public class pcategory extends HttpServlet {
 		
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(array);
-		System.out.println(array);
    	}
     public pcategory() {
         super();

@@ -1,5 +1,8 @@
 // 1. 로그인제 [ 로그인된 경우에만 실행 하겠다.[ 세션호출: jsp vs ajax ]  ]
 let mid = document.querySelector('.mid').value
+let type = document.querySelector('.type').value
+
+alert(type)   
 // 2. 웹소켓 선언 
 let clientsocket = null;
 // 3. 접속 제어 
@@ -15,9 +18,23 @@ if (mid != 'null') {
 } else { alert('로그인이 필요합니다.'); location.href = '../member/login.jsp'; }
 function onopen(e) { alert(e) }
 function onclose(e) { alert(e) }
+
+/*
+function text() {
+	let msg=  {
+		type:type,
+		content:document.querySelector('.msgbox').value,
+		mid : mid,
+		date : new Date().toLocaleTimeString(),
+	}
+	clientsocket.send(JSON.stringify(msg));
+	document.querySelector('.msgbox').value='';
+}
+*/
+
 function send() {
 	let msg = { // 전송할 데이터 객체
-		type: "msg",	// 일반메시지 
+		type: type,// 일반메시지 
 		content: document.querySelector('.msgbox').value, // 작성내용
 		mid: mid,  // 보낸 사람 
 		date: new Date().toLocaleTimeString(), // 날짜 
@@ -26,6 +43,7 @@ function send() {
 	clientsocket.send(JSON.stringify(msg));
 	document.querySelector('.msgbox').value = '';
 }
+
 function emosend(i) { // 이모티콘 전송
 	let msg = {
 		type: "emo",	// 이모티콘 
@@ -43,7 +61,7 @@ function enterkey() { if (window.event.keyCode == 13) { send() } }
 function onmessage(e) {
 	let msg = JSON.parse(e.data) // 받은 데이터 객체
 
-	if (msg.type == "msg") { //전송타입이 메시지 이면 
+	if (msg.type == type) { //전송타입이 메시지 이면 
 		if (msg.mid == mid) { // 본인 글이면  // 보낸사람 아이디와 접속된 아이디가 동일하면
 			let html = document.querySelector('.contentbox').innerHTML;
 
@@ -72,16 +90,16 @@ function onmessage(e) {
 		//////////////////////////////////////////////////////////////
 	} else if (msg.type == 'emo') {//전송타입이 이모티콘 이면 
 		//////////////////////////////2.이모티콘 전송 코드 /////////////////
-		if(msg.mid==mid){//내가보낸거
-				let html = document.querySelector('.contentbox').innerHTML;
+		if (msg.mid == mid) {//내가보낸거
+			let html = document.querySelector('.contentbox').innerHTML;
 
 			html += '<div class="secontent my-3"> ' +
 				'<span class="date"> ' + msg.date + ' </span>' +
-				'<img src="/jspweb/img/imoji/emo'+msg.content+'.gif" width="90px"> ' +
+				'<img src="/jspweb/img/imoji/emo' + msg.content + '.gif" width="90px"> ' +
 				'</div>';
 			document.querySelector('.contentbox').innerHTML = html
-		 }
-		else { 
+		}
+		else {
 			let html = document.querySelector('.contentbox').innerHTML;
 			html += '<div class="row g-0 my-3">' +
 				'	<div class="col-sm-1 mx-2">' +
@@ -90,7 +108,7 @@ function onmessage(e) {
 				'	<div class="col-sm-9"> ' +
 				'		<div class="recontent"> ' +
 				'			<div class="name">' + msg.mid + '</div>' +
-				'		<img src="/jspweb/img/imoji/emo'+msg.content+'.gif" width="90px"> ' +
+				'		<img src="/jspweb/img/imoji/emo' + msg.content + '.gif" width="90px"> ' +
 				'			<span class="date">' + msg.date + '</span>' +
 				'		</div>' +
 				'	</div>' +
@@ -98,26 +116,26 @@ function onmessage(e) {
 			document.querySelector('.contentbox').innerHTML = html
 		}
 		//////////////////////////////////////////////////////////////
-	}else if(msg.type=='alarm'){
+	} else if (msg.type == 'alarm') {
 		let html = document.querySelector('.contentbox').innerHTML
-		html += '<div class=alarm>'+
-'				<span>'+msg.content+' </span>'+
-'			</div>';
-		document.querySelector('.contentbox').innerHTML= html
+		html += '<div class=alarm>' +
+			'				<span>' + msg.content + ' </span>' +
+			'			</div>';
+		document.querySelector('.contentbox').innerHTML = html
 	}
-	
-	////////////////////////스크롤 하단으로 내리기 /////////////////////////////// 
-  	/////////////// 스크롤 하단으로 내리기 ////////////////////////
-	let top  = document.querySelector('.contentbox').scrollTop;
-	let Height  = document.querySelector('.contentbox').scrollHeight;
-	console.log( '스크롤막대 상단위치 : ' + top )
-	console.log( '스크롤 전체 길이 : ' + Height )
 
-	document.querySelector('.contentbox').scrollTop 
+	////////////////////////스크롤 하단으로 내리기 /////////////////////////////// 
+	/////////////// 스크롤 하단으로 내리기 ////////////////////////
+	let top = document.querySelector('.contentbox').scrollTop;
+	let Height = document.querySelector('.contentbox').scrollHeight;
+	console.log('스크롤막대 상단위치 : ' + top)
+	console.log('스크롤 전체 길이 : ' + Height)
+
+	document.querySelector('.contentbox').scrollTop
 		= document.querySelector('.contentbox').scrollHeight;
 }
 
-function onerror(e){ 	alert(e) }
+function onerror(e) { alert(e) }
 
 // JSON ---> 문자열 변환 	JSON.stringify( )
 // 문자열 ---> JSON 변환  	JSON.parse( )

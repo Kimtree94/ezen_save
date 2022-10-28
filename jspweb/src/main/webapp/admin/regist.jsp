@@ -13,7 +13,7 @@
 		<h3>제품 등록</h3>
 			제품명 : <input type="text" name="pname"><br>
 			설명 :  <textarea rows="" cols="" name="pcomment"></textarea><br>
-		   
+		   	가격 : <input type="text" name="pprice"><br>
 			할인율 : <input type="text" name="pdiscount"><br>
 			카테고리 :	<button type="button" onclick="pcategoryview()">카테고리추가</button>
 			<span class="pcategoryaddbox"> <!-- 카테고리 추가 입력 구역  -->

@@ -73,8 +73,7 @@ function getpcategory() {
 				let category = json[i];
 				html+='<input type="radio" name="pcno" value="'+category.pcno+'">'+category.pcname;
 			}
-		document.querySelector('.pcategorybox').innerHTML=html;	
-			
+		document.querySelector('.pcategorybox,.categorybox').innerHTML=html;	
 		}
 
 

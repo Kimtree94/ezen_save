@@ -16,7 +16,6 @@ public class Dao {
 				"jdbc:mysql://localhost:3306/jspweb", 
 				"root", 
 				"1234");
-		System.out.println("DB 연동 성공");
 	}catch (Exception e) {}
 }
 

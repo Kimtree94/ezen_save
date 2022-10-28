@@ -5,6 +5,8 @@ import javax.websocket.server.ServerEndpoint;
 
 import org.json.simple.JSONObject;
 
+import model.dao.MemberDao;
+
 import java.io.IOException;
 import java.util.Hashtable;
 
@@ -14,11 +16,9 @@ import javax.websocket.*;
 //@WebServlet("/board/chatting")	// 서블릿 URL 만들기 
 @ServerEndpoint("/chatting/{mid}")	 	// 웹서버에 웹소켓 URL 만들기  URL/{변수명}
 public class chatting{	// 키[ set=증복불가 ] : 값 ---> 엔트리 [ 모든 키호출 : clients.keySet() / 값 호출 : clients
-	
 	// 서버소켓에 들어온 클라이언트소켓 명단 ( 세션 ) Vector ---> hashtable 변경한 이유는 [ 2개 저장할려고 ]
 			//arraylist VS Vector [ 동기화 x VS 동기화 o ] 
 	public static Hashtable<Session , String> clients = new Hashtable<>();
-	
 	//*알람 html 구성함수
 	public JSONObject jsonAlarm(String content) throws IOException {
 		JSONObject object = new JSONObject();
