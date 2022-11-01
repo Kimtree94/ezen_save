@@ -43,6 +43,7 @@ public class login extends HttpServlet {
 		if(result==1) {
 			HttpSession session = request.getSession();	// 1. 세션 객체 선언
 			session.setAttribute("mid", mid);			// 2. 세션 생성 [ 세션 메모리 할당 ]
+			
 								//식별자 : 값
 		}
 		
