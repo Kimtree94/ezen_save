@@ -8,9 +8,8 @@ public class MemberDao extends Dao {
 
 	private static MemberDao mdao = new MemberDao();
 
-	public static MemberDao getInstance() {
-		return mdao;
-	}
+	public static MemberDao getInstance() {return mdao;}
+	
 
 	// 기능 메소드 구현
 	// 1. 회원가입 메소드

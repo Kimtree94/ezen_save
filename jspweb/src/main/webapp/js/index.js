@@ -9,7 +9,7 @@ function getpactive1() {
 			let html = ''; 
 			json.forEach(list => {
 				 html += '<div class="item">' +
-					'		<a href="#">' +
+					'		<a href="/jspweb/product/view.jsp?pno='+list.pno+'">' +
 					'		<img alt="" src="/jspweb/admin/pimg/' + list.pimg + '">' +'		</a>'+
 					'		<div class="item_info">' +
 					'		<div class="item_title">' +list.pname+'</div>'+
