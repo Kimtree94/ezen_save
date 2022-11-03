@@ -35,13 +35,6 @@ public class plike extends HttpServlet {
 		response.getWriter().print(result); // 1 : 취소 2 : 등록 3: db오류
 		System.out.println("결과//"+result);
 	
-	
-	
-	
-	
-	
-	
-	
 	}
 
 }
