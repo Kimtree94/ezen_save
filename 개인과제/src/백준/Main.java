@@ -13,14 +13,22 @@ n을 a로 나누었는데 값이 홀수이면
 public class Main {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		int answer = 0;
-		int[] sides = {1, 2, 3};
-		// a >b+c b>c+a c>b+a
-		if (sides[0] >= sides[1] + sides[2] || sides[1] >= sides[0] + sides[2] || sides[2] >= sides[0] + sides[1]) {
-			System.out.println(2);
-		}else {
-			System.out.println(1);
-		}
+	int price = scanner.nextInt();
+	int answer= 0;
+	if(price>=100000&&price<300000) {
+		answer=(int) (price-(price*0.05));
+	}
+	else if(price>=300000&&price<500000){
+		answer=(int)(price- (price*0.1));
+	}
+	else if(price>=500000&&price<=1000000) {
+		answer=(int)(price-(price*0.2));
+	}
+	else if(price<=100000){
+		answer=price;
+	}
+	System.out.println(answer);
+		
 	}// main E
 }// class E
 /*

@@ -39,7 +39,7 @@
 		<!-- 사이드바에서 메뉴 클릭시 jsp가 표시되는 구역  -->	
 	</div>
 	<!-- J쿼리  -->
-	<!-- 부트스트랩 JS -->
+	<!-- 부트스트랩 JS --> 
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="/jspweb/js/admin/dashboard.js"></script>

@@ -46,7 +46,6 @@ public class stock extends HttpServlet {
 			object.put("pstno", dto.getPstno());
 			object.put("pcolor", dto.getPcolor());
 			object.put("pstock", dto.getPstock());
-			System.out.println("칼라///"+dto.getPcolor());
 			array.add(object);
 		}
 		//4. 반환

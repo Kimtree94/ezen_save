@@ -64,7 +64,7 @@ document.querySelector('.size_select').addEventListener('change' , (e)=>{
 	}
 	
 	// 선택된 제품정보와 옵션을 객체 만드다. 
-	let sproduct = {
+	let sproduct = {		// 재고번호 vs 제품번호/색상/사이즈 
 		pcolor : color , 	// 색상
 		psize : size , 		// 사이즈 
 		amount : 1			// 수량
@@ -95,7 +95,33 @@ btnlike.addEventListener('click',(e)=>{
 				btnlike.innerHTML='찜하기♥'
 			}else{
 				alert("db오류")
-			}
+			}    
+		}
+	})
+});
+//btncart 이벤트 
+
+
+ document.querySelector('.btncart').addEventListener('click',(e)=>{
+	//1 만약에 선택한 제품이 없으면 
+	if(productlist.length==0){alert('최소 1개 이상의 옵션을 선택해주세요');return;}
+	//로그인유무
+	if(document.querySelector('.mid').value=='null'){alert('로그인후 이용가능한 기능입니다.');return;}
+	// 3. 선택된 제품들의 옵션들을 전송
+	$.ajax({
+		url:"/jspweb/product/cart",
+		type:"post",
+		data:{"data":JSON.stringify(productlist),"pno":pno},
+		success:function(re){
+			console.log("결과"+re)
+			if(re =='true'){
+				productlist=[]//배열 초기화
+				if(confirm('장바구니에 담았습니다. 장바구니페이지로 이동할까요?')){
+					location.href='cart.jsp'
+				}
+			}else{alert('장바구니 담기에 실패했습니다.')}
+	
+
 		}
 	})
 });

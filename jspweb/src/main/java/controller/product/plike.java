@@ -29,8 +29,8 @@ public class plike extends HttpServlet {
 		int pno = Integer.parseInt(request.getParameter("pno")); 
 		int mno = MemberDao.getInstance().getMno((String)request.getSession().getAttribute("mid"));
 		//2. db처리
-		System.out.println("서블릿넘버.."+pno);System.out.println("서블릿넘버.."+mno);
-		int result =new ProductDao().setplike(mno,pno);
+		System.out.println("서블릿p넘버.."+pno);System.out.println("서블릿m넘버.."+mno);
+		int result =new ProductDao().setplike(pno,mno);
 		//3. 응답
 		response.getWriter().print(result); // 1 : 취소 2 : 등록 3: db오류
 		System.out.println("결과//"+result);

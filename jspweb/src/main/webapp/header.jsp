@@ -43,7 +43,7 @@
 					<!-- // java  시작//세션이 없다 => 로그인 안했다 . --> 
 					<%	if	(loginid==null){%>	
 						<li><a class="nav-link"  href="/jspweb/member/login.jsp">로그인</a></li>
-						<li><aclass="nav-link"  href="/jspweb/member/singup.jsp">회원가입</a></li>
+						<li><a lass="nav-link"  href="/jspweb/member/singup.jsp">회원가입</a></li>
 						<!--//세션이 존재한다 => 로그인했다.  -->
 					<% }else if(loginid.equals("admin")){	%><!-- 로그인된 아이디가 admin이면 보이는 메뉴  -->
 							<li> <a class="nav-link"  href="/jspweb/admin/dashboard.jsp">관리자모드</a></li>
@@ -78,7 +78,8 @@
 				<input type="search"> 
 				<i class="fas fa-search"></i>
 				</span>
-				<i class="fas fa-shopping-cart"></i>
+				<a href="/jspweb/product/cart.jsp"><i class="fas fa-shopping-cart"></i>       </a>
+				
 			</li>
 		</ul>
 		

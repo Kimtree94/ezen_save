@@ -4,6 +4,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import controller.admin.regist;
+import model.dto.CartDto;
 import model.dto.PcategoryDto;
 import model.dto.ProductDto;
 import model.dto.StockDto;
@@ -195,7 +196,7 @@ public class ProductDao extends Dao {
 
 	// 10. 제품 찜하기
 	public int setplike(int pno, int mno) {
-		System.out.println("넘버.."+pno);System.out.println("넘버.."+mno);
+		System.out.println("p넘버.."+pno);System.out.println("m넘버.."+mno);
 		String sql = "select*from plike where pno=? and mno=?";// [해당 찜하기 여부있는지 체크]
 		try {
 			ps = con.prepareStatement(sql);
@@ -214,27 +215,58 @@ public class ProductDao extends Dao {
 			
 		} catch (Exception e) {System.out.println(e);} return 3 ;
 	}
-
 	
 	
+		
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	//11.장바구니에 선택한 제품 옵션 저장 
+	public boolean setcart(int pno ,String psize , int amount , String pcolor , int mno) {
+		//! 만약에 동일한 제품 옵션 존재했을때 업데이트 처리 [미구현 ]
+		// 동일한 제품 옵션이 없을때 
+		String sql =" insert into cart ( amount , pstno , mno) "
+				+ "values ( "
+				+ ""+amount+","
+				+ "(select pstno from productstock pst,(select psno from productsize where pno="+pno+" and psize ='"+psize+"')sub "
+				+ "where pst.psno =sub.psno and pcolor='"+pcolor+"'),"
+				+ ""+mno+""
+				+ " );";
+			
+		try {
+			ps=con.prepareStatement(sql);ps.executeUpdate();return true;
+		} catch (Exception e) {System.out.println(e);}return false;
+	}
+	//12. 회원번의 모든 장부구니 호출 
+	public ArrayList<CartDto> getCart(int mno){
+		System.out.println("카트다오"+mno);
+		ArrayList<CartDto>list = new ArrayList<>();
+		String sql = "select "
+				+ "	   c.cartno ,  c.pstno , "
+				+ "    p.pname , p.pimg  , "
+				+ "    p.pprice   ,   p.pdiscount  , "
+				+ "	   pst.pcolor  , ps.psize  , "
+				+ "    c.amount  "
+				+ " from "
+				+ "	   cart c natural join "
+				+ "    productstock pst natural join "
+				+ "    productsize ps natural join "
+				+ "    product p "
+				+ " where "
+				+ "	c.mno = "+mno;
+		try {
+			ps=con.prepareStatement(sql);rs=ps.executeQuery();
+			while(rs.next()) {
+				CartDto dto = new CartDto(
+				rs.getInt(1),rs.getInt(2),
+				rs.getString(3),rs.getString(4),
+				rs.getInt(5),rs.getFloat(6),
+				rs.getString(7),rs.getString(8),rs.getInt(9));
+				list.add(dto);
+				System.out.println("카트다오ll"+dto);
+			}
+		} catch (Exception e) {System.out.println(e);}
+		return list;
+	}
 	
 	
 	
