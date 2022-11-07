@@ -82,7 +82,7 @@ btnlike.addEventListener('click',(e)=>{
 	}
 	//2.찜하기 등록 혹은 삭제 
 	$.ajax({
-		url:"http://localhost:8080/jspweb/product/plike",
+		url:"/jspweb/product/plike",
 		type:"post",
 		data:{"pno":pno},
 		success :function(re){

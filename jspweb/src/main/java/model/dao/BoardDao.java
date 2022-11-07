@@ -107,9 +107,13 @@ public class BoardDao extends Dao {
 	
 	//6 게시물 수정 
 	public boolean bupdate(int bno , String btitle , String bcontent , String bfile) {
-		
-		String sql="update board set btitle=? , bcontent = ? ,"
-				+ ",bfile=? where bno = ?";
+		System.out.println("게시판 수정 다오"+bno);
+		System.out.println("게시판 수정 다오"+btitle);
+		System.out.println("게시판 수정 다오"+bcontent);
+		System.out.println("게시판 수정 다오"+bfile);
+		String sql= "update board set btitle = ? , "
+				+ " bcontent=? , bfile = ? "
+				+ " where bno = ?";
 		try {
 			ps=con.prepareStatement(sql);
 			ps.setString(1, btitle);

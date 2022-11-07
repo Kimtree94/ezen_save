@@ -31,12 +31,10 @@ public class bupdate extends HttpServlet {
 		String btitle = multi.getParameter("btitle"); // 수정할 제목
 		String bcontent = multi.getParameter("bcontent"); // 수정할 내용
 		String bfile = multi.getFilesystemName("bfile"); // 새로운 첨부파일
-
 		// 1. 수정시 새로운 첨부파일 등록시 [ 기존첨부파일 삭제 ]
 
 		// * 수정할 게시물의 번호
 		int bno = (Integer) request.getSession().getAttribute("bno");
-
 		BoardDto dto = BoardDao.getInstance().getboard(bno);
 
 		// * 기존 첨부파일 변경 여부 판단
@@ -50,6 +48,10 @@ public class bupdate extends HttpServlet {
 
 		// 4. dao 처리 [ 업데이트 = 새로운 첨부파일 ]
 		boolean result = BoardDao.getInstance().bupdate(bno, btitle, bcontent, bfile);
+		System.out.println("게시판수정 서블릿::"+result);
+		System.out.println("게시판수정 서블릿 btitle::"+btitle);
+		System.out.println("게시판수정 서블릿 bcontent::"+bcontent);
+		System.out.println("게시판수정 서블릿 bfile::"+bfile);
 
 		if (result) {// 업데이트 성공시 [ 기존첨부파일 변경되었을때 ] 기존파일 삭제
 			if (bfilechange) {

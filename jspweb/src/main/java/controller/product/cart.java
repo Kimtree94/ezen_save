@@ -35,11 +35,9 @@ public class cart extends HttpServlet {
 		//1. 요청 
 		int mno=MemberDao.getInstance().getMno((String)request.getSession().getAttribute("mid")	) ;
 		//2. db처리
-		System.out.println("카트서블릿"+mno);
 		
 		ArrayList<CartDto> list = new ProductDao().getCart(mno);
 		
-		System.out.println("카트서블릿list"+list);
 		//*형변환
 		JSONArray array = new JSONArray();
 		for(CartDto dto :list) {
@@ -55,7 +53,6 @@ public class cart extends HttpServlet {
 			object.put("amount", dto.getAmount());
 			array.add(object);
 		}
-		System.out.println("카트서블릿array"+array);
 		//3. 응답
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(array);

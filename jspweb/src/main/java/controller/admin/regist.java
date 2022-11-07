@@ -1,5 +1,6 @@
 package controller.admin;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -8,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -40,9 +42,8 @@ public class regist extends HttpServlet {  //  HttpServlet 서블릿클래스 [ 
 		String pimg = mulit.getFilesystemName("pimg");		System.out.println(pimg);
 		
 		int pcno = Integer.parseInt(mulit.getParameter("pcno"));
-		System.out.println("pc/////"+pcno);
-		ProductDto dto = new ProductDto(0, pname, pcomment, pprice, pdiscount, (byte)0, pimg, null, pcno);
 		
+		ProductDto dto = new ProductDto(0, pname, pcomment, pprice, pdiscount, (byte)0, pimg, null, pcno);
 		
 		boolean result = new ProductDao().setProduct(dto);
 		
@@ -55,9 +56,9 @@ public class regist extends HttpServlet {  //  HttpServlet 서블릿클래스 [ 
     	//**타입 :1 [ 모든 제품 출력 ] 2 [ 개별 제품 출력 ]
     	//공통요청변수
     	String type = request.getParameter("type");
+    	System.out.println("넌또뭐냐'''"+type);
     	response.setCharacterEncoding("UTF-8");
     	if(type.equals("1")) {
-    		
     		//1.전체출력 2. 판매중 출력
     		String option = request.getParameter("option");
     		//////////////////////// 모든제품 출력 /////////////////////////////////////////
@@ -105,7 +106,7 @@ public class regist extends HttpServlet {  //  HttpServlet 서블릿클래스 [ 
    	}
     	
     }   
-    /////////////////////////////////////3.제품 수정 메소드 [put]///////////////////////////////////////
+    /////////////////////////////////////3.제품 수정 메소드 [put 매핑]///////////////////////////////////////
     @Override // 재정의 
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		/* 첨부파일이 있을경우에 [ 업로드용 ]*/
@@ -117,36 +118,53 @@ public class regist extends HttpServlet {  //  HttpServlet 서블릿클래스 [ 
 				new DefaultFileRenamePolicy()); 
 		
 		int pno = Integer.parseInt(mulit.getParameter("pno"));// 수정할 대상  	
+		byte pactive=Byte.parseByte(mulit.getParameter("pactive"));
 		
 		String pname = mulit.getParameter("pname"); 							
 		String pcomment = mulit.getParameter("pcomment");						
 		int pprice = Integer.parseInt( mulit.getParameter("pprice"));			
 		float pdiscount = Float.parseFloat( mulit.getParameter("pdiscount"));	
-		String pimg = mulit.getFilesystemName("pimg");		
-		byte pactive=Byte.parseByte(mulit.getParameter("pactive"));
+		String pimg = mulit.getFilesystemName("pimg");	
+		
 		int pcno =Integer.parseInt(mulit.getParameter("pcno"));
-		System.out.println("pcno////"+pcno);
-		ProductDto dto = new ProductDto(pno, pname, pcomment, pprice, pdiscount, pactive, pimg, null, pcno);
+		
+		boolean bfilechange=true;
+		ProductDto olddto = new ProductDao().getProduct(pno);
+		
+		if( pimg == null ) {  pimg = olddto.getPimg(); bfilechange =false; }
+		
+		ProductDto dto = new ProductDto( pno , pname, pcomment,pprice, pdiscount, pactive ,pimg, null, pcno );
 		
 		boolean result = new ProductDao().updateproduct(dto);
-		System.out.println(result);
 		
+		if(result&&bfilechange) {deletefile(request.getSession(), olddto.getPimg());}
+			
 		response.getWriter().print(result);
     }	
     ////////////////////////////////////4.제품 삭제 메소드[delete]///////////////////////////////////////////////
-    @Override
     	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	//1. 요청
-    	int pno = Integer.parseInt(request.getParameter("pno"));
+    	int pno= Integer.parseInt(request.getParameter("pno"));
+    	ProductDto olddto = new ProductDao().getProduct(pno);
+    	
+    	System.out.println("삭제메소드 ::"+pno);
     	//2.dao
     	boolean result = new ProductDao().deleteproduct(pno);
+    	System.out.println("삭제메소드 result::"+result);
+    	if(result) {deletefile(request.getSession(),olddto.getPimg() ) ; }
+    	
     	response.getWriter().print(result);
-    
+    	System.out.println("삭제메소드 result::"+result);
     
     
     }
     
- //////////////////////////////////////////////////////////////////////////////////////////////  
+//////////////////////////////////////////5. 수정 및 삭제시 첨부파일 제거 메소드 [ file delete ]  //////////////////////////////////////////////
+public void deletefile( HttpSession session ,  String pimg ) {
+String deletepath = session.getServletContext().getRealPath("/admin/pimg/"+ pimg );
+File file = new File( deletepath );
+if( file.exists() ) file.delete();	// 해당 경로에 존재하는 파일을 삭제
+}
     private static final long serialVersionUID = 1L;
  
     public regist() {

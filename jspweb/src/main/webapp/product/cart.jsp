@@ -17,11 +17,10 @@
 		<button type="button">전체삭제</button>
 		<button type="button">쇼핑하기</button>
 		<!-- 아임포트 결제 버튼 -->
-		<button onclick="requestPay()" type="button" >결제하기</button>
+		<button onclick="payload()" type="button" >결제하기</button>
 	</div>
 
-	<!-- iamport.payment.js [ 아임포트 결제API ]-->
-	<script type="text/javascript"src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+	
 	<script type="text/javascript" src="/jspweb/js/product/cart.js"></script>
 </body>
 </html>

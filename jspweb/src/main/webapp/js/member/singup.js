@@ -35,7 +35,7 @@ function mevent1(){											// 아이디를 입력[keyup]하면 이벤트 발�
 	if( midj.test(mid) ){ // 정규표현식이 동일하면				// 3. 정규표현식 검사 
 	
 		$.ajax({ 											// 4. 아이디 중복체크 [ 비동기식 - ajax ]
-			url : "http://localhost:8080/jspweb/member/idcheck",
+			url : "/jspweb/member/idcheck",
 			data : { "mid" : mid } , 
 			success : function( re ) {						// 5. 중복체크 결과(re) 
 				if( re === 'true'){ col3[0].innerHTML = bicon+" 사용중인 아이디" }
@@ -66,7 +66,7 @@ function mevent3(){
 }
 /*----- 이름 ------------ */
 function mevent4(){
-	let mname = document.querySelector("#mname").value
+	let mname = document.querySelector("#mname").value;			
 	let mnamej = /^[a-zA-Z가-힣]{2,20}$/
 	if( mnamej.test( mname) ){ col3[2].innerHTML = sicon;  }
 	else{ col3[2].innerHTML = bicon+'영대소문자 혹은 한글 2~20글자'}
@@ -85,7 +85,7 @@ function mevent6(){
 	if( memailj.test(memail) ){ 
 		
 		$.ajax({
-			url : "http://localhost:8080/jspweb/member/emailcheck" , 
+			url : "/jspweb/member/emailcheck" , 
 			data : { "memail" : memail } , 
 			success : function( re ){ 
 				if( re === 'true'){ 
@@ -113,6 +113,7 @@ sample4_postcode.addEventListener( 'change' ,  addresscheck )	// change 된 객�
 sample4_roadAddress.addEventListener( 'change' ,  addresscheck )
 sample4_jibunAddress.addEventListener( 'change' ,  addresscheck )
 sample4_detailAddress.addEventListener( 'change' ,  addresscheck )
+
 /* ------ 전송 버튼 눌렀을때 ------- */
 function formsubmit(){
 	// 1.아이디 ~ 주소 모두 유효성검사 검토 
@@ -123,8 +124,7 @@ function formsubmit(){
 	if( document.querySelector('#confirm1').checked == false ){ alert('이용약관에 동의해주세요'); 		return false; }
 	if( document.querySelector('#confirm2').checked == false ){ alert(' 개인정보 수집 동의해주세요'); 	return false; }
 	
-	document.querySelector('.singupform').submit();	// 해당 form 전송 // 폼객체.submit()
-
+	document.querySelector('.signupform').submit();	// 해당 form 전송 // 폼객체.submit()
 	// document.querySelector('.signupform') : signupform 이라는 class 를 가지고 있는 tag 호출
 }
 
@@ -175,6 +175,12 @@ function sample4_execDaumPostcode() {
             document.getElementById("sample4_roadAddress").value = roadAddr;
             document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
             
+            // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+            if(roadAddr !== ''){
+                document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+            } else {
+                document.getElementById("sample4_extraAddress").value = '';
+            }
 
             var guideTextBox = document.getElementById("guide");
             // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.

@@ -86,9 +86,7 @@ function updateproduct() {
 
 //3. 삭제메소드
 function deleteproduct(pno) {
-	if (confirm("정말 삭제하시겠습니까?")) {//확인 버튼을 눌렀을때 
-		alert('삭제를 진행합니다.')
-
+	if (confirm("정말 삭제하시겠습니까?"+pno)) {//확인 버튼을 눌렀을때 
 		$.ajax({
 			url: "/jspweb/admin/regist",
 			data: { "pno": pno }, // 톰캣 서버의 기본설정값은 get,post 방식만 data속성 사용 즉 객체[Body]전송 
@@ -96,6 +94,7 @@ function deleteproduct(pno) {
 			//<Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443" parseBodyMethods="POST,GET,DELETE,PUT"/> 
 			type: "delete",
 			success: function(re) {
+				alert(re)
 				if (re == 'true') { alert('삭제성공'); pagechange('list.jsp') }//pagechange() = dashboard.jsp내에 dashboard.js 가 포함되어 있기 때문에 호출이 가능하다 
 				else { alert('삭제실패') }
 			}

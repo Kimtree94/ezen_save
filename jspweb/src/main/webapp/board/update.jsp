@@ -27,7 +27,7 @@
 	<div class="webbox">
 		<form>
 			제목 : <input type="text" name="btitle" class="btitle"> <br>
-			내용 :<textarea name="editordata" id="bcontent" class="bcontent"></textarea><br>
+			내용 :<textarea id="summernote"  name="bcontent"  class="bcontent"></textarea><br>
 			첨부파일 : <input type="file" name="bfile" class="bfile"><br>
 			
 			<!-- 기존 첨부파일 이름과 삭제버튼 표시 구역  -->

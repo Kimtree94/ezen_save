@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import controller.admin.regist;
 import model.dto.CartDto;
+import model.dto.OrderDto;
 import model.dto.PcategoryDto;
 import model.dto.ProductDto;
 import model.dto.StockDto;
@@ -89,6 +90,7 @@ public class ProductDao extends Dao {
 	// 5. 제품삭제
 	public boolean deleteproduct(int pno) {
 		String sql = "delete from product where pno=" + pno;
+		System.out.println("제품삭제 다오 ::"+pno);
 		try {
 			ps = con.prepareStatement(sql);
 			// 삭제시 삭제된 레코드수로 삭제성공 유무 판단
@@ -202,7 +204,7 @@ public class ProductDao extends Dao {
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, pno); ps.setInt(2, mno);rs=ps.executeQuery();
 			if(rs.next()) {//이미 찜하기가 되어있는 경우 // 검색 결과가 있으면 =>취소
-				sql="delete * from plike where pno=? and mno =?";
+				sql="delete from plike where pno=? and mno =?";
 				ps=con.prepareStatement(sql);
 				ps.setInt(1, pno);ps.setInt(2, mno);
 				ps.executeUpdate();return 1;
@@ -238,7 +240,6 @@ public class ProductDao extends Dao {
 	}
 	//12. 회원번의 모든 장부구니 호출 
 	public ArrayList<CartDto> getCart(int mno){
-		System.out.println("카트다오"+mno);
 		ArrayList<CartDto>list = new ArrayList<>();
 		String sql = "select "
 				+ "	   c.cartno ,  c.pstno , "
@@ -262,14 +263,52 @@ public class ProductDao extends Dao {
 				rs.getInt(5),rs.getFloat(6),
 				rs.getString(7),rs.getString(8),rs.getInt(9));
 				list.add(dto);
-				System.out.println("카트다오ll"+dto);
 			}
 		} catch (Exception e) {System.out.println(e);}
 		return list;
 	}
 	
-	
-	
+	//13. 
+	public boolean setOrder(ArrayList<OrderDto> list) {
+		System.out.println("프로덕트다오 ::::"+list);
+		//1. 주문 레코드 생성
+		String sql = " insert into porder values(?, ?, ?, ?, ?, ?, ?) ";
+		try {
+			
+			ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			for(int i=0;i<list.size();i++) {
+				ps.setInt(1, list.get(i).getOno());
+				ps.setString(2, list.get(i).getOname());
+				ps.setString(3, list.get(i).getOphone());
+				ps.setString(4, list.get(i).getOaddress());
+				ps.setString(5, list.get(i).getOrequest());
+				ps.setString(6, list.get(i).getOdate());
+				ps.setInt(7, list.get(i).getMno());
+				ps.executeUpdate();
+				rs = ps.getGeneratedKeys();
+			}
+			if (rs.next()) {
+				int ono = rs.getInt(1); // pk 호출
+				//odno=0, odamaount=1, odprice=14000, odactive=0, pstno=1]]
+				// 2. 색상재고 등록
+				sql = "insert into porderdetail(ono,odno,odamaount,odprice,odactive,pstno) values(?,?,?,?,?,?)";
+				ps = con.prepareStatement(sql);
+				for(int i=0;i<list.size();i++) {
+				ps.setInt(1, ono);
+				ps.setInt(2, list.get(i).getOdno());
+				ps.setInt(3, list.get(i).getOdamaount());
+				ps.setInt(4, list.get(i).getOdprice());
+				ps.setInt(5, list.get(i).getOdactive());
+				ps.setInt(6, list.get(i).getPstno());
+				ps.executeUpdate();
+				}
+				return true;
+			}
+		} catch (Exception e) {System.out.println(e);}
+		//2. 위에서 생성된 주문번호를 이용해서 주문된제품[list]의 개수만큼 주문상세 레코드드를 생성
+		
+		return false;
+	}
 	
 	
 }

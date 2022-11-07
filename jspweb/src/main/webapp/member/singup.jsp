@@ -13,7 +13,7 @@
 	<%@include file="../header.jsp"%>
 	
 	<div class="webbox">
-			<form class="singupform" action="/jspweb/member/signup" method="post">
+			<form class="signupform" action="/jspweb/member/signup" method="post">
 			<h2 class="pagetitle">회원가입</h2>
 			<h3 class="parttitle">기본정보</h3>
 			<table class="signuptable">

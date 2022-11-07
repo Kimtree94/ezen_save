@@ -129,10 +129,6 @@ function updateaction() {
 		buttons[1].innerHTML = '확인'
 	}
 
-
-
-
-
 }
 
 
