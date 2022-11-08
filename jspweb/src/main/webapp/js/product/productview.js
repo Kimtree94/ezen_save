@@ -1,4 +1,4 @@
-/*
+6 /*
 	document.querySelector('tag명')
 	document.querySelector('#id명')
 	document.querySelector('.class명')

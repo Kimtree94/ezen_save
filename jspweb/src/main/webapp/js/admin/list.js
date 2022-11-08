@@ -42,6 +42,7 @@ function updatemodel(pno) {
 		data: { "type": 2, "pno": pno }, //type 이 2이면 개별 제품호출 
 		type: "get",
 		success: function(re) {
+	
 			let json = JSON.parse(re)
 			document.querySelector('.pno').value = json.pno
 			document.querySelector('.pname').value = json.pname

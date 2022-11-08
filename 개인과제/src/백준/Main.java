@@ -13,22 +13,14 @@ n을 a로 나누었는데 값이 홀수이면
 public class Main {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		String answer = "";
+		String my_string = "hello";
 		int n = scanner.nextInt();
-		int[] answer = {};
-		int k = 0;
-		int [] y = {};
-		for (int i = 0; i <= n; i++) {
-			if (i % 2 == 1) {
-				k++;
-				y=new int[k++];
-			}
-			System.out.println(k);
+		for(int i=1;i<=my_string.length();i++) {
+			System.out.println(i);
+			//System.out.println(my_string.substring(i, 1));
 		}
-		for(int j=n ; j<0;j--) {
-			if(j%2==1) {
-				answer[k]=y[j];
-			}
-		}
+		
 	}// main E
 }// class E
 /*
