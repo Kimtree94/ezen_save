@@ -12,17 +12,23 @@ n을 a로 나누었는데 값이 홀수이면
  */
 public class Main {
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		String answer = "";
-		String my_string = "hello";
-		int n = scanner.nextInt();
-		for(int i=1;i<=my_string.length();i++) {
-			System.out.println(i);
-			//System.out.println(my_string.substring(i, 1));
+		Scanner sc = new Scanner(System.in);
+		String[] s1 = {"a", "b", "c"};
+		String[] s2 = {"com", "b", "d", "p", "c"};
+		int answer = 0;
+		for (int j = 0; j < s1.length; j++) {
+			for (int i = 0; i < s2.length; i++) {
+				if (s1[j].equals(s2[i])) {
+					answer++;
+				}
+			}
 		}
-		
+		System.out.println(answer);
 	}// main E
 }// class E
 /*
-
+ * if(s2[i].length()==s1[i].length()&&s2[i].charAt(i)==s1[i].charAt(i)) { s2=new
+ * String[A]; answer++;
+ * 
+ * answer=s1[].charAt(i); String index out of range 배열길이를 벗어남
  */
