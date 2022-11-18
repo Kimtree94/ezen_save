@@ -13,17 +13,18 @@ n을 a로 나누었는데 값이 홀수이면
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int [] array= {9, -1, 0};
+		int [] array= {1, 2, 7, 10, 11};
 		int answer=0;
 		for(int i=0;i<array.length;i++) {
 			for(int j=0;j<array.length;j++) {
-				if(array[i]>array[j]) {
+				if(array[i]>=array[j]) {
 				int temp=array[i];
 				array[i]=array[j];
 				array[j]=temp;
 				}
 			}
 		}
+		answer=array[array.length/2];
 		//모든 약수의 수는 순서쌍의 수와 같다??
 	}// main E
 }// class E

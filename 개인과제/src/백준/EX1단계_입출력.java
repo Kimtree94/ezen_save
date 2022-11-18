@@ -22,6 +22,8 @@ public class EX1단계_입출력 {
 			if(regex1) {System.out.println("입력성공");}
 			//비밀번호 길이10개 영어 대소문자 숫자 
 			
+			crolling ss=new crolling();
+			ss.sdsd();
 		
 			}
 	//"^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&])[A-Za-z[0-9]$@$!%*#?&]{8,20}$"
