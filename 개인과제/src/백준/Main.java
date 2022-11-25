@@ -14,8 +14,11 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int [] S ={0,1,2,3,4,5,6,7,8,9};
-		System.out.println(S[2]);
 		String my_string="aAb1B2cC34oOp";
+		int [] B = {};
+		
+		for(int i=0;i<my_string.length();i++) {
+		}
 	}// main E
 }// class E
 /*
