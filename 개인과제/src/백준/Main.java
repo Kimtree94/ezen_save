@@ -13,18 +13,12 @@ n을 a로 나누었는데 값이 홀수이면
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int [] array= {1, 2, 7, 10, 11};
-		int answer=0;
-		for(int i=0;i<array.length;i++) {
-			for(int j=0;j<array.length;j++) {
-				if(array[i]>=array[j]) {
-				int temp=array[i];
-				array[i]=array[j];
-				array[j]=temp;
-				}
-			}
-		}
-		answer=array[array.length/2];
+		
+		String my_String = "bus";
+		String S=" a, e, i, o, u ";
+		String answer ="";
+		
+		int B= my_String.indexOf(S);
 		//모든 약수의 수는 순서쌍의 수와 같다??
 	}// main E
 }// class E
@@ -59,4 +53,20 @@ public class Main {
 		        if(n%i == 0) {answer++;}
 		    }
 	System.out.println(answer);
- */
+	
+	////////////////////////////////////////////
+	 * 		int [] array= {1, 2, 7, 10, 11};
+		int answer=0;
+		for(int i=0;i<array.length;i++) {
+			for(int j=0;j<array.length;j++) {
+				if(array[i]>=array[j]) {
+				int temp=array[i];
+				array[i]=array[j];
+				array[j]=temp;
+				}
+			}
+		}
+		answer=array[array.length/2];
+		//모든 약수의 수는 순서쌍의 수와 같다??
+	 * 
+	 */
