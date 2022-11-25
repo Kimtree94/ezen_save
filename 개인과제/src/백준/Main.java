@@ -13,60 +13,41 @@ n을 a로 나누었는데 값이 홀수이면
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
-		String my_String = "bus";
-		String S=" a, e, i, o, u ";
-		String answer ="";
-		
-		int B= my_String.indexOf(S);
-		//모든 약수의 수는 순서쌍의 수와 같다??
+		int [] S ={0,1,2,3,4,5,6,7,8,9};
+		System.out.println(S[2]);
+		String my_string="aAb1B2cC34oOp";
 	}// main E
 }// class E
-/* b
- * if(s2[i].length()==s1[i].length()&&s2[i].charAt(i)==s1[i].charAt(i)) { s2=new
- * String[A]; answer++;
+/*
+ * b if(s2[i].length()==s1[i].length()&&s2[i].charAt(i)==s1[i].charAt(i)) {
+ * s2=new String[A]; answer++;
  * 
  * answer=s1[].charAt(i); String index out of range 배열길이를 벗어남
  * 
  * 
  * 0,1,4,5,6,9 가 있다 == 제곱수이다??
  * 
- * for(int i=0;i<=n;i++) {
-				for(int j=0;j<=n;j++) {
-					if(n==(i*j))
-						answer++;
-				}
-			}
-			
-				while(A) {
-				int i=0; int j=0;
-				i++;j++;
-				if(n==(i*j)) {answer++;}
-				else if(n!=(i*j)){continue;}
-				else if(n==i) {
-					A=false;
-				}
-			}
-			
-				int answer=0;
-		 for(int i = 1 ; i <= n ; i ++) {
-		        if(n%i == 0) {answer++;}
-		    }
-	System.out.println(answer);
-	
-	////////////////////////////////////////////
-	 * 		int [] array= {1, 2, 7, 10, 11};
-		int answer=0;
-		for(int i=0;i<array.length;i++) {
-			for(int j=0;j<array.length;j++) {
-				if(array[i]>=array[j]) {
-				int temp=array[i];
-				array[i]=array[j];
-				array[j]=temp;
-				}
-			}
+ * for(int i=0;i<=n;i++) { for(int j=0;j<=n;j++) { if(n==(i*j)) answer++; } }
+ * 
+ * while(A) { int i=0; int j=0; i++;j++; if(n==(i*j)) {answer++;} else
+ * if(n!=(i*j)){continue;} else if(n==i) { A=false; } }
+ * 
+ * int answer=0; for(int i = 1 ; i <= n ; i ++) { if(n%i == 0) {answer++;} }
+ * System.out.println(answer);
+ * 
+ * //////////////////////////////////////////// int [] array= {1, 2, 7, 10, 11};
+ * int answer=0; for(int i=0;i<array.length;i++) { for(int
+ * j=0;j<array.length;j++) { if(array[i]>=array[j]) { int temp=array[i];
+ * array[i]=array[j]; array[j]=temp; } } } answer=array[array.length/2]; //모든
+ * 약수의 수는 순서쌍의 수와 같다??
+ *
+ *==============================================================
+ *	String my_String = "nice to meet you";
+		String Ssss = "a,e,i,o,u";
+		String answer = "";
+		for(char A : Ssss.toCharArray()) {
+			my_String=my_String.replace(String.valueOf(A),"");
 		}
-		answer=array[array.length/2];
-		//모든 약수의 수는 순서쌍의 수와 같다??
-	 * 
-	 */
+		answer=my_String;
+		System.out.println(answer);
+ */
