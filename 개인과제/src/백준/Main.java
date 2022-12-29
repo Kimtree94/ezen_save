@@ -13,12 +13,15 @@ n을 a로 나누었는데 값이 홀수이면
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int [] S ={0,1,2,3,4,5,6,7,8,9};
-		String my_string="aAb1B2cC34oOp";
-		int [] B = {};
-		
+		String my_string = "aAb1B2cC34oOp";
+		int [] test = {0,1,2,3,4,5,6,7,8,9};
+		System.out.println(test[0]);
+				int answer= 0; 
+				String A ="";
 		for(int i=0;i<my_string.length();i++) {
+			 A = my_string.replaceAll("[^0-9]", "");
 		}
+		System.out.println(A);
 	}// main E
 }// class E
 /*
@@ -44,13 +47,29 @@ public class Main {
  * array[i]=array[j]; array[j]=temp; } } } answer=array[array.length/2]; //모든
  * 약수의 수는 순서쌍의 수와 같다??
  *
- *==============================================================
- *	String my_String = "nice to meet you";
-		String Ssss = "a,e,i,o,u";
-		String answer = "";
-		for(char A : Ssss.toCharArray()) {
-			my_String=my_String.replace(String.valueOf(A),"");
-		}
-		answer=my_String;
+ * ============================================================== String
+ * my_String = "nice to meet you"; String Ssss = "a,e,i,o,u"; String answer =
+ * ""; for(char A : Ssss.toCharArray()) {
+ * my_String=my_String.replace(String.valueOf(A),""); } answer=my_String;
+ * System.out.println(answer);
+ * 
+ * 
+ * 
+ * ===================================================================== for(int
+ * i=0;i<my_string.length();i++) { A = my_string.toCharArray(); for(int
+ * j=0;j<A.length;j++) { for(int k=0;k<S.length;k++) { if(A[i]==S[k]) { count++;
+ * } } } }
+ * 
+ * ==================================================================================
+ * 	int answer = 0;
+		int hp=999;
+		answer +=(hp/5);
+		hp%=5;
+		
+		answer+=(hp/3);
+		hp%=3;
+		
+		answer+=(hp/1);
+		
 		System.out.println(answer);
  */
