@@ -1,6 +1,9 @@
 package 백준;
 
+import java.awt.Window.Type;
 import java.util.Scanner;
+
+import javax.print.DocFlavor.CHAR_ARRAY;
 
 /*
  만약에 15라면 15이하의 홀수를 배열에 추가
@@ -13,15 +16,33 @@ n을 a로 나누었는데 값이 홀수이면
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		String my_string = "aAb1B2cC34oOp";
-		int [] test = {0,1,2,3,4,5,6,7,8,9};
-		System.out.println(test[0]);
-				int answer= 0; 
-				String A ="";
-		for(int i=0;i<my_string.length();i++) {
-			 A = my_string.replaceAll("[^0-9]", "");
+		String my_string = "1a2b3c4d123";
+//		int [] test = {0,1,2,3,4,5,6,7,8,9};
+		int answer = 0;
+		/*
+		 * String[] A = new String[my_string.length()]; String replace = "";
+		 * 
+		 * replace = my_string.toLowerCase().replaceAll("[abcdefghijklmnopqrstuvwxyz]",
+		 * ""); String[] arry = replace.split("");
+		 * 
+		 * for (int i = 0; i < arry.length; i++) { answer += Integer.parseInt(arry[i]);
+		 * }
+		 */
+		
+		String [ ] A = new String[my_string.length()]; 
+		String re = "";
+		re = my_string.toLowerCase().replaceAll("[abcdefghijklmnopqrstubwxyz]", "");
+		A=re.split("");
+		for(int i = 0; i<A.length;i++) {
+			System.out.println(Integer.parseInt(A[i]));
+			answer+=Integer.parseInt(A[i]);
 		}
-		System.out.println(A);
+			
+		System.out.println("sdsd");
+		System.out.println(answer);
+		
+		String G = "AASSSDD123";
+
 	}// main E
 }// class E
 /*
@@ -60,16 +81,12 @@ public class Main {
  * j=0;j<A.length;j++) { for(int k=0;k<S.length;k++) { if(A[i]==S[k]) { count++;
  * } } } }
  * 
- * ==================================================================================
- * 	int answer = 0;
-		int hp=999;
-		answer +=(hp/5);
-		hp%=5;
-		
-		answer+=(hp/3);
-		hp%=3;
-		
-		answer+=(hp/1);
-		
-		System.out.println(answer);
+ * =============================================================================
+ * ===== int answer = 0; int hp=999; answer +=(hp/5); hp%=5;
+ * 
+ * answer+=(hp/3); hp%=3;
+ * 
+ * answer+=(hp/1);
+ * 
+ * System.out.println(answer);
  */
